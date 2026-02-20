@@ -1,9 +1,10 @@
 export interface NewsItem {
   id: number
+  slug: string
   date: string
   title: string
   excerpt: string
-  content?: string // Added for detail view
+  content?: string
   image: string
   category: string
   categoryColor: string
@@ -13,6 +14,7 @@ export interface NewsItem {
 export const newsData: NewsItem[] = [
   {
     id: 1,
+    slug: 'chevrolet-tracker-2026-yangilangan-versiya',
     date: '15.02.2026',
     title: 'Chevrolet Tracker 2026 — yangilangan versiya taqdim etildi',
     excerpt:
@@ -35,6 +37,7 @@ export const newsData: NewsItem[] = [
   },
   {
     id: 2,
+    slug: 'foizsiz-muddatli-tolov-2026-yanvar',
     date: '01.02.2026',
     title: "Foizsiz muddatli to'lov: 2026 yil yanvar imkoniyatlari",
     excerpt:
@@ -55,6 +58,7 @@ export const newsData: NewsItem[] = [
   },
   {
     id: 3,
+    slug: 'chevrolet-tahoe-2026-kuchli-v8',
     date: '20.01.2026',
     title: 'Chevrolet Tahoe 2026: kuchli V8 va yangi Premium paket',
     excerpt:
@@ -77,6 +81,7 @@ export const newsData: NewsItem[] = [
   },
   {
     id: 4,
+    slug: 'trade-in-xizmati-eski-avtomobilingizni-yangisiga-almashtiring',
     date: '10.01.2026',
     title: 'Trade-In xizmati: eski avtomobilingizni yangisiga almashtiring',
     excerpt:

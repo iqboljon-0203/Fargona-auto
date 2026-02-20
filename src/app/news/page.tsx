@@ -28,7 +28,7 @@ export default function NewsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsData.map((item, i) => (
-              <Link href={`/news/${item.id}`} key={item.id} className="block h-full group">
+              <Link href={`/news/${item.slug}`} key={item.id} className="block h-full group">
                 <motion.article
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

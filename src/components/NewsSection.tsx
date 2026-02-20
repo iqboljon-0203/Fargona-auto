@@ -40,7 +40,7 @@ export default function NewsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 
           {/* Featured card — takes 3/5 */}
-          <Link href={`/news/${featured.id}`} className="lg:col-span-3 block">
+          <Link href={`/news/${featured.slug}`} className="lg:col-span-3 block">
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function NewsSection() {
           {/* Right column — 3 small cards stacked */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             {rest.map((item, i) => (
-              <Link href={`/news/${item.id}`} key={item.id} className="block flex-1">
+              <Link href={`/news/${item.slug}`} key={item.id} className="block flex-1">
                 <motion.article
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
