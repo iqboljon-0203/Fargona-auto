@@ -5,25 +5,30 @@ import { useState } from 'react'
 import { Phone, X, Send, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const contacts = [
-  {
-    name: 'Telefon',
-    href: 'tel:+998954002087',
-    icon: Phone,
-    color: 'bg-blue-500',
-    label: '+998 95 400 20 87',
-  },
-  {
-    name: 'Telegram',
-    href: 'https://t.me/fargonachevrolet',
-    icon: Send,
-    color: 'bg-sky-500',
-    label: 'Telegram',
-  },
-]
+import { useDictionary } from '@/components/DictionaryProvider'
 
 export default function FloatingContact() {
+  const dict = useDictionary() as any
+  const comm = dict.common
+  const footer = dict.footer
   const [open, setOpen] = useState(false)
+
+  const contacts = [
+    {
+      name: footer.phone_label,
+      href: 'tel:+998954002087',
+      icon: Phone,
+      color: 'bg-blue-500',
+      label: '+998 95 400 20 87',
+    },
+    {
+      name: 'Telegram',
+      href: 'https://t.me/Avtotexsalon',
+      icon: Send,
+      color: 'bg-sky-500',
+      label: 'Telegram',
+    },
+  ]
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
@@ -42,6 +47,7 @@ export default function FloatingContact() {
                 exit={{ opacity: 0, y: 10, scale: 0.8 }}
                 transition={{ delay: i * 0.05 }}
                 className="flex items-center gap-3 group"
+                aria-label={c.name}
               >
                 <span className="bg-zinc-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg border border-zinc-800 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   {c.label}
@@ -58,6 +64,8 @@ export default function FloatingContact() {
       {/* Main FAB */}
       <button
         onClick={() => setOpen(!open)}
+        aria-label={open ? comm.menu_close : comm.menu_open}
+        aria-expanded={open}
         className={`w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl transition-all duration-300 ${
           open
             ? 'bg-zinc-800 rotate-90'

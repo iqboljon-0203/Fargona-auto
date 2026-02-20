@@ -1,0 +1,530 @@
+{
+  "common": {
+    "menu_open": "Menyuni ochish",
+    "menu_close": "Menyuni yopish",
+    "skip_to_content": "Asosiy kontentga o'tish",
+    "toggle_theme": "Mavzuni o'zgartirish",
+    "prev_image": "Oldingi rasm",
+    "next_image": "Keyingi rasm",
+    "image": "Rasm",
+    "prev_slide": "Oldingi slayd",
+    "next_slide": "Keyingi slayd",
+    "slide": "Slayd"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "news": "Yangiliklar",
+    "models": "Modellar",
+    "contact": "Aloqa",
+    "location": "Manzil"
+  },
+  "hero": {
+    "official_dealer": "Rasmiy diller",
+    "all_models": "Barcha modellar",
+    "slides": [
+      {
+        "title": "CHEVROLET TRACKER",
+        "subtitle": "Dadil dizayn. Aqlli texnologiyalar. Yo'lda ishonch.",
+        "button": "Batafsil ma'lumot"
+      },
+      {
+        "title": "CHEVROLET TAHOE RST",
+        "subtitle": "Yanada jasur. Yanada mukammal. Yanada funksional.",
+        "button": "Batafsil"
+      },
+      {
+        "title": "CHEVROLET CAPTIVA",
+        "subtitle": "Kenglik, ishonch va texnologiya — oilaviy SUV",
+        "button": "Ko'proq bilish"
+      },
+      {
+        "title": "CHEVROLET TRAVERSE",
+        "subtitle": "Oilangizning to'laqonli a'zosi",
+        "button": "Batafsil"
+      },
+      {
+        "title": "CHEVROLET TAHOE HC",
+        "subtitle": "Premium klassdagi haqiqiy hashamat",
+        "button": "Ko'rish"
+      }
+    ]
+  },
+  "about": {
+    "label": "Rasmiy Chevrolet diller",
+    "title_1": "Biz",
+    "title_2": "haqimizda",
+    "p1": "\"Farg'ona Avtotexxizmat-F\" MCHJ — Farg'ona viloyatida Chevrolet brendining yagona rasmiy dilleridir. Biz 2009 yildan beri faoliyat yuritib, mintaqada avtomobil sohasida ishonch va sifat ramzi sifatida tanilganmiz.",
+    "p2": "Kompaniyamiz mijozlarga yangi avtomobillar sotish, rasmiy texnik xizmat ko'rsatish, original ehtiyot qismlar ta'minlash va Trade-In xizmatlarini taklif etadi. Har bir mijozga individual yondashuv bizning asosiy tamoyilimizdir.",
+    "p3": "Showroomimizda Chevrolet brendi ostidagi barcha dolzarb modellarni jonli ko'rishingiz, sinov haydovini amalga oshirishingiz va qulay muddatli to'lov sharoitlarida avtomobil xarid qilishingiz mumkin.",
+    "stats": {
+      "experience": "Yillik tajriba",
+      "clients": "Mamnun mijozlar",
+      "serviced": "Xizmat ko'rsatilgan",
+      "warranty": "Rasmiy kafolat"
+    }
+  },
+  "models": {
+    "section_title_1": "Mashhur",
+    "section_title_2": "Modellar",
+    "section_subtitle": "Eng ko'p so'ralgan va ommabop Chevrolet modellari — tanlang va haydang.",
+    "details": "Batafsil",
+    "all_models": "Barcha modellar",
+    "back": "Bosh sahifa",
+    "all": "Barchasi",
+    "catalog_label": "Rasmiy diller katalogi",
+    "page_title_1": "Barcha",
+    "page_title_2": "Modellar",
+    "page_subtitle": "ta model — Farg'ona Chevrolet rasmiy assortimenti",
+    "price_from": "Narxidan boshlab",
+    "currency": "so'm"
+  },
+  "news": {
+    "label": "So'nggi xabarlar",
+    "title_1": "Yangi",
+    "title_2": "liklar",
+    "all": "Barchasi",
+    "read_more": "Batafsil",
+    "page_label": "Barcha xabarlar",
+    "page_title_1": "Yangiliklar",
+    "page_title_2": " Arxivi",
+    "back": "Ortga qaytish"
+  },
+  "contact": {
+    "title": "Aloqa",
+    "name_label": "Ism",
+    "name_placeholder": "Ismingiz",
+    "phone_label": "Telefon raqami",
+    "phone_placeholder": "__ ___ __ __",
+    "model_label": "Model",
+    "submit": "Yuborish",
+    "success_title": "So'rovingiz qabul qilindi!",
+    "success_subtitle": "Tez orada siz bilan bog'lanamiz.",
+    "privacy": "Yuborish tugmasini bosib, siz",
+    "privacy_link": "shaxsiy ma'lumotlarni qayta ishlash",
+    "privacy_end": "ga rozilik bildirasiz."
+  },
+  "location": {
+    "title_1": "Bizning",
+    "title_2": "Manzilimiz",
+    "subtitle": "Showroomimizga tashrif buyuring va eng yangi Chevrolet modellarini jonli ko'ring.",
+    "label": "Rasmiy diller",
+    "company_name": "\"FARG'ONA AVTOTEXXIZMAT-F\" MCHJ",
+    "address_label": "Manzil",
+    "address": "Farg'ona viloyati, Farg'ona shahri, Aeroport ko'chasi, 78-uy",
+    "phone_label": "Telefon",
+    "email_label": "E-mail",
+    "hours_label": "Ish vaqti",
+    "hours": "Dushanba – Shanba: 09:00 – 18:00\nYakshanba: dam olish",
+    "call": "Qo'ng'iroq qilish"
+  },
+  "footer": {
+    "description": "Sizga eng yaxshi avtomobillarni taqdim etish va xizmat ko'rsatishning yuqori darajasini ta'minlash — bizning maqsadimiz.",
+    "company": "Kompaniya",
+    "models": "Modellar",
+    "contact_title": "Bog'lanish",
+    "phone_label": "Telefon",
+    "email_label": "E-mail",
+    "hours_label": "Ish vaqti",
+    "hours": "Du–Sha: 09:00–18:00",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "official_dealer": "Rasmiy Chevrolet dilleri"
+  },
+  "car_detail": {
+    "home": "Bosh sahifa",
+    "models": "Modellar",
+    "back": "Orqaga",
+    "price_from": "Narxidan boshlab",
+    "currency": "so'm",
+    "monthly": "Yoki oyiga",
+    "monthly_suffix": "so'mdan",
+    "color_label": "Rang",
+    "color_note": "* Rang mavjudligini dillerda tekshiring",
+    "safety": "Xavfsizlik reytingi",
+    "order": "Buyurtma berish",
+    "send_request": "So'rov yuborish",
+    "specs_title_1": "Texnik",
+    "specs_title_2": "Ko'rsatkichlar",
+    "engine": "Dvigatel",
+    "power": "Quvvat",
+    "transmission": "Uzatmalar qutisi",
+    "fuel": "Yoqilg'i sarfi",
+    "trunk": "Bagaj hajmi",
+    "seats": "O'rindiqlar",
+    "about_title_1": "Model",
+    "about_title_2": "Haqida",
+    "features_title_1": "Asosiy",
+    "features_title_2": "Xususiyatlar",
+    "benefits": [
+      "Foizsiz muddatli to'lov imkoniyati",
+      "Rasmiy 5 yillik kafolat",
+      "Trade-In xizmati",
+      "Bepul birinchi texnik ko'rik"
+    ],
+    "other_models_1": "Boshqa",
+    "other_models_2": "Modellar",
+    "view_all": "Barchasi"
+  },
+  "cars": {
+    "tracker": {
+      "subtitle": "Kompakt krossover",
+      "tagline": "Dadil dizayn. Aqlli texnologiyalar. Yo'lda ishonch.",
+      "description": "Chevrolet Tracker — bu yangi avlod shahar krossoveri bo'lib, ilg'or texnologiyalar, ta'sirchan dizayn va amaliy qulaylikni o'zida mujassamlashtirgan. 132 ot kuchiga ega 1.2 litrlik turbodvigatel, 6 pog'onali avtomatik uzatmalar qutisi tufayli, u shahar ritmiga ham, shahar tashqarisidagi sayohatlarga ham osonlik bilan moslashadi.",
+      "badge": "Ommabop",
+      "specs": {
+        "engine": "1.2 Turbo",
+        "power": "132 ot kuchi",
+        "transmission": "6 AKPP",
+        "fuel": "6.9 L/100km",
+        "trunkVolume": "393 L",
+        "seats": "5 o'rindiq"
+      },
+      "features": {
+        "Panorama lyuk": { "title": "Panorama lyuk", "description": "Panoramali shisha lyuk — salon yanada yorug'" },
+        "360° kamera": { "title": "360° kamera", "description": "Barcha tomondan parklovchi kamera tizimi" },
+        "Apple CarPlay": { "title": "Apple CarPlay", "description": "iPhone va Android Auto integratsiyasi" },
+        "Avtomatik tormozlash": { "title": "Avtomatik tormozlash", "description": "Avtonom favqulodda tormozlash tizimi" }
+      },
+      "colors": {
+        "Oq": "Oq",
+        "Ko'k": "Ko'k",
+        "Qora": "Qora",
+        "Kumush": "Kumush",
+        "Qizil": "Qizil",
+        "To'q ko'k": "To'q ko'k",
+        "Kulrang": "Kulrang"
+      }
+    },
+    "captiva": {
+      "subtitle": "Oilaviy krossover",
+      "tagline": "Kenglik, ishonch va texnologiya",
+      "description": "Chevrolet Captiva — bu kundalik qulaylik va uzoq safarlar uchun mo'ljallangan keng, texnologik SUV. Old g'ildirakdan tortish, turbomotor va silliq CVT uzatmalar qutisi bilan Captiva haydovchi uchun muvozanatli samaradorlik va boshqaruvni taqdim etadi. Model 5 yoki 7 o'rinli konfiguratsiyada taklif qilinadi.",
+      "badge": "Yangi",
+      "specs": {
+        "engine": "1.5 Turbo",
+        "power": "149 ot kuchi",
+        "transmission": "CVT",
+        "fuel": "7.5 L/100km",
+        "trunkVolume": "489/1081 L",
+        "seats": "5-7 o'rindiq"
+      },
+      "features": {
+        "Panorama lyuk": { "title": "Panorama lyuk", "description": "Keng panorama shisha lyuk" },
+        "360° kamera": { "title": "360° kamera", "description": "Doiraviy ko'rish tizimi" },
+        "18\" disklar": { "title": "18\" disklar", "description": "18 dyuymli yengil quyma disklar" },
+        "LED faralar": { "title": "LED faralar", "description": "Svetodiod avtomobil faralari" }
+      },
+      "colors": {
+        "Oq": "Oq",
+        "Kumush": "Kumush",
+        "Qora": "Qora",
+        "Kulrang": "Kulrang",
+        "Qizil": "Qizil"
+      }
+    },
+    "traverse": {
+      "name": "Traverse",
+      "subtitle": "3 qatorli krossover",
+      "tagline": "Oilangizning to'laqonli a'zosi",
+      "description": "Chevrolet Traverse – oilangizning to'laqonli a'zosi bo'la oladigan ishonchli krossover. Ilg'or texnologiyalar yordamida yaratilgan Traverse sizning eng buyuk rejalaringizni amalga oshirishda yordam beradi. Bagajni qo'lsiz ochish, simsiz zaryadlash qurilmasi, 360 gradusli kamera va boshqalar.",
+      "badge": "Chegirma",
+      "specs": {
+        "engine": "3.6L V6",
+        "power": "318 ot kuchi",
+        "transmission": "9 AKPP",
+        "fuel": "10.0 L/100km",
+        "trunkVolume": "651/2781 L",
+        "seats": "7-8 o'rindiq"
+      },
+      "features": {
+        "Qo'lsiz bagaj": { "title": "Qo'lsiz bagaj", "description": "Oyog'ingizni tagingizda silkitib bagajni oching" },
+        "360° kamera": { "title": "360° kamera", "description": "To'liq atrofiy ko'rinish tizimi" },
+        "Simsiz zaryadlash": { "title": "Simsiz zaryadlash", "description": "Qi standartidagi induktiv zaryadlash" },
+        "Uzoq chiroq avto": { "title": "Uzoq chiroq avto", "description": "Qarama-qarshi avtomobilni ilg'ab avtomatik sozlash" }
+      },
+      "colors": {
+        "Oq": "Oq",
+        "Qora": "Qora",
+        "Kulrang": "Kulrang",
+        "Kumush": "Kumush"
+      }
+    },
+    "traverse-z71": {
+      "name": "Traverse Z71",
+      "subtitle": "Off-road krossover",
+      "tagline": "Har qanday yo'l sharoitida ishonchli",
+      "description": "Chevrolet Traverse Z71 — faol oilaviy hayot va har qanday yo'l sharoitida ishonchli harakatlanish uchun yaratilgan kuchli va keng to'liq tortuvchi SUV. 328 ot kuchiga ega 2,5 litrli turbo benzin dvigateli hamda 8 pog'onali avtomat uzatmalar qutisi bilan jihozlangan.",
+      "specs": {
+        "engine": "2.5 Turbo",
+        "power": "328 ot kuchi",
+        "transmission": "8 AKPP",
+        "fuel": "10.5 L/100km",
+        "trunkVolume": "651 L",
+        "seats": "7 o'rindiq"
+      },
+      "features": {
+        "To'liq yuritma": { "title": "To'liq yuritma", "description": "Ikki muftali to'liq yuritma tizimi" },
+        "Terrain Mode": { "title": "Terrain Mode", "description": "Turli yo'l rejimlarini tanlash" },
+        "Hill Descent": { "title": "Hill Descent", "description": "Tog'dan tushishda yordam beruvchi tizim" },
+        "Adaptive amortizator": { "title": "Adaptive amortizator", "description": "Tebranish chastotasiga moslashuvchan" }
+      },
+      "colors": {
+        "To'q ko'k": "To'q ko'k",
+        "Qora": "Qora",
+        "Oq": "Oq"
+      }
+    },
+    "tahoe-rst": {
+      "name": "Tahoe RST",
+      "subtitle": "Kuchli fullsize SUV",
+      "tagline": "Yanada jasur. Yanada mukammal.",
+      "description": "Yangi Chevrolet Tahoe - afsonaviy hamda yirik o'lchamli yo'ltanlamas, faqat sizga tegishli bo'lgan ta'sirchan kuchning timsoli. V8 hajmdagi 5.3 litr va 343 ot kuchi bilan quvvatlantirilgan, 10 pog'onali avtomatik uzatma va moslashuvchan osma bilan jihozlangan.",
+      "badge": "Premium",
+      "specs": {
+        "engine": "5.3L V8",
+        "power": "343 ot kuchi",
+        "transmission": "10 AKPP",
+        "fuel": "12.5 L/100km",
+        "trunkVolume": "722/3480 L",
+        "seats": "8 o'rindiq"
+      },
+      "features": {
+        "V8 dvigatel": { "title": "V8 dvigatel", "description": "5.3 L quvvatli Ecotec3 dvigateli" },
+        "Magnetic Ride": { "title": "Magnetic Ride", "description": "Magnitli boshqariladigan osma tizimi" },
+        "Bose audio": { "title": "Bose audio", "description": "9 dinamikli yuqori sifatli audio tizim" },
+        "RST dizayn": { "title": "RST dizayn", "description": "Sport uslubidagi qora tashqi elementlar" }
+      },
+      "colors": {
+        "Oq": "Oq",
+        "Qora": "Qora",
+        "Kulrang": "Kulrang",
+        "To'q ko'k": "To'q ko'k"
+      }
+    },
+    "tahoe-hc": {
+      "name": "Tahoe High Country",
+      "subtitle": "Premium fullsize SUV",
+      "tagline": "Hayratlanarli kuchning mujassamlashuvi",
+      "description": "Yangi Chevrolet Tahoe High Country 2025 — afsonaviy to'liq o'lchamli yo'ltanlamas. 420 ot kuchiga ega 6,2 litrli V8 dvigateli, 10 pog'onali avtomat uzatmalar qutisi va moslashuvchan pnevmatik osma bilan jihozlangan.",
+      "badge": "Top",
+      "specs": {
+        "engine": "6.2L V8",
+        "power": "420 ot kuchi",
+        "transmission": "10 AKPP",
+        "fuel": "13.5 L/100km",
+        "trunkVolume": "722/3480 L",
+        "seats": "7 o'rindiq"
+      },
+      "features": {
+        "6.2L V8": { "title": "6.2L V8", "description": "Eng kuchli Ecotec3 dvigateli" },
+        "Air Suspension": { "title": "Air Suspension", "description": "Adaptiv pnevmatik osma tizimi" },
+        "Head-Up Display": { "title": "Head-Up Display", "description": "Ma'lumotlarni old oynaga proyeksiyalash" },
+        "HC Interior": { "title": "HC Interior", "description": "High Country eksklyuziv salon dizayni" }
+      },
+      "colors": {
+        "Marvarid oq": "Marvarid oq",
+        "Qora": "Qora",
+        "Bej": "Bej"
+      }
+    },
+    "onix": {
+      "subtitle": "Zamonaviy sedan",
+      "tagline": "Barchasi u haqida",
+      "description": "Chevrolet Onix — yangi model yorqin dizayn, zamonaviy interyer hamda qulaylik va xavfsizlik uchun barcha zarur opsiyalarni o'zida mujassamlashtiradi. Shahar hayotiga mos, iqtisodiy va zamonaviy sedan.",
+      "badge": "Chegirma",
+      "specs": {
+        "engine": "1.2 Turbo",
+        "power": "132 ot kuchi",
+        "transmission": "6 AKPP",
+        "fuel": "6.2 L/100km",
+        "trunkVolume": "469 L",
+        "seats": "5 o'rindiq"
+      },
+      "features": {
+        "Sunroof": { "title": "Lyuk", "description": "Elektron boshqariladigan lyuk" },
+        "Smart Entry": { "title": "Smart Entry", "description": "Kalitsiz kirish va yurgizish tizimi" },
+        "Parking Sensors": { "title": "Parktroniklar", "description": "Old va orqa parkovka datchiklari" },
+        "Turbo": { "title": "Turbo dvigatel", "description": "Yuqori dinamika va tejamkorlik" }
+      },
+      "colors": {
+        "Oq": "Oq",
+        "Qora": "Qora",
+        "To'q ko'k": "To'q ko'k",
+        "Kulrang": "Kulrang",
+        "Pushti": "Pushti"
+      }
+    },
+    "cobalt-mcm": {
+      "subtitle": "Yangilangan sedan",
+      "tagline": "Yangilangan va zamonaviy",
+      "description": "Chevrolet Cobalt MCM — mashhur Cobalt modelining yangilangan versiyasi. Zamonaviy dizayn, yaxshilangan xavfsizlik tizimlari va qulaylik bilan jihozlangan. O'zbekiston yo'llariga moslashtirilgan ishonchli sedan.",
+      "specs": {
+        "engine": "1.5L",
+        "power": "106 ot kuchi",
+        "transmission": "6 AKPP",
+        "fuel": "6.7 L/100km",
+        "trunkVolume": "563 L",
+        "seats": "5 o'rindiq"
+      },
+      "features": {
+        "New Design": { "title": "Yangi dizayn", "description": "MCM uslubidagi orqa chiroqlar va panjara" },
+        "ABS+EBD": { "title": "ABS+EBD", "description": "Yaxshilangan tormozlash tizimi" },
+        "Comfort": { "title": "Qulaylik", "description": "Yumshoq va keng salon" },
+        "Reliability": { "title": "Ishonchlilik", "description": "Yillar davomida sinalgan texnologiya" }
+      },
+      "colors": {
+        "Oq": "Oq",
+        "Qora": "Qora",
+        "To'q kulrang": "To'q kulrang",
+        "Kumush": "Kumush"
+      }
+    },
+    "cobalt": {
+      "subtitle": "Hamyonbop sedan",
+      "tagline": "Hammaga yetarli qulay",
+      "description": "Chevrolet Cobalt - bu neytral dizaynga ega Yevropa standartlari bo'yicha \"B-segment\"ga kiruvchi ergonomik va qulay interyerga va vaqt sinovidan o'tgan texnik \"tarkibga\" ega bo'lgan subkompakt FWD sedan hisoblanadi.",
+      "specs": {
+        "engine": "1.5L",
+        "power": "106 ot kuchi",
+        "transmission": "6 AKPP/5MT",
+        "fuel": "6.7 L/100km",
+        "trunkVolume": "563 L",
+        "seats": "5 o'rindiq"
+      },
+      "features": {
+        "Trunk Space": { "title": "Keng bagaj", "description": "563 litrli rekord darajadagi yukxona" },
+        "AC": { "title": "Konditsioner", "description": "Salonda yoqimli haroratni saqlash" },
+        "Audio": { "title": "Audio tizim", "description": "USB va Bluetooth qo'llab-quvvatlash" },
+        "Engine": { "title": "Durable dvigatel", "description": "Tejamkor va uzoq umr ko'ruvchi motor" }
+      },
+      "colors": {
+        "Oq": "Oq",
+        "Qizil": "Qizil",
+        "Ko'k": "Ko'k",
+        "Kulrang": "Kulrang"
+      }
+    },
+    "malibu-xl": {
+      "subtitle": "Biznes sedan",
+      "tagline": "Zamonaviy klassik dizayn",
+      "description": "Malibu XL 2023 shahar muhiti uchun mo'ljallangan va eng zamonaviy dizayn, texnologiya, sifat va xavfsizlikni birlashtiradi. Dadil, ishonchli va jozibali tashqi ko'rinish keng va xashamatli interyer bilan birlashtirilgan. O'rta va yuqori sinfning flagman sedanidir.",
+      "specs": {
+        "engine": "2.0 Turbo",
+        "power": "236 ot kuchi",
+        "transmission": "9 AKPP",
+        "fuel": "7.0 L/100km",
+        "trunkVolume": "447 L",
+        "seats": "5 o'rindiq"
+      },
+      "features": {
+        "Turbo Engine": { "title": "Turbo dvigatel", "description": "2.0 L quvvatli zamonaviy motor" },
+        "Ventilation": { "title": "Ventilyatsiya", "description": "O'rindiqlarni sovitish va isitish tizimi" },
+        "Safety": { "title": "Xavfsizlik", "description": "10 ta xavfsizlik yostiqchasi" },
+        "Display": { "title": "Media ekran", "description": "Yuqori sifatli sensorli displey" }
+      },
+      "colors": {
+        "Qizil": "Qizil",
+        "Qora": "Qora",
+        "Oq": "Oq",
+        "To'q ko'k": "To'q ko'k"
+      }
+    },
+    "labo": {
+      "subtitle": "Yengil yuk mashinasi",
+      "tagline": "Ishonchli yuk hamrohingiz",
+      "description": "Chevrolet Labo — kichik biznes va kundalik yuk tashish uchun mo'ljallangan ishonchli yengil tijorat avtomobili. Iqtisodiy yoqilg'i sarfi va arzon narxi bilan kichik tadbirkorlar uchun ideal tanlov.",
+      "specs": {
+        "engine": "0.8L",
+        "power": "38 ot kuchi",
+        "transmission": "5MT",
+        "fuel": "7.5 L/100km",
+        "trunkVolume": "Bortli yukxona",
+        "seats": "2 o'rindiq"
+      },
+      "features": {
+        "Commercial": { "title": "Tijorat", "description": "Shaharda yuk tashish uchun eng yaxshi yuz" },
+        "Payload": { "title": "Yuk ko'tarish", "description": "550 kg gacha yuk tashish imkoniyati" },
+        "Dimensions": { "title": "O'lchamlar", "description": "Tor ko'chalarda harakatlanish uchun ideal" },
+        "Reliability": { "title": "Ishonchlilik", "description": "Oddiy va bardoshli konstruksiya" }
+      },
+      "colors": {
+        "Oq": "Oq"
+      }
+    },
+    "damas": {
+      "subtitle": "Miniven",
+      "tagline": "Kompakt va qulaylik",
+      "description": "Chevrolet Damas — O'zbekistonda eng mashhur minivenlardan biri. Yuk va passajir tashish uchun ishonchli va iqtisodiy tijorat transporti. Kompakt o'lchamlari shahar ichida harakatlanishni osonlashtiradi.",
+      "specs": {
+        "engine": "0.8L",
+        "power": "38 ot kuchi",
+        "transmission": "5MT",
+        "fuel": "6.5 L/100km",
+        "trunkVolume": "Yuk/Passajir",
+        "seats": "2-7 o'rindiq"
+      },
+      "features": {
+        "Kompakt": { "title": "Kompakt", "description": "Tor ko'chalarda oson manevr" },
+        "Iqtisodiy": { "title": "Iqtisodiy", "description": "Kam yoqilg'i sarfi" },
+        "Ikki funksiya": { "title": "Ikki funksiya", "description": "Yuk va passajir tashish imkoniyati" },
+        "Hamyonbop": { "title": "Hamyonbop", "description": "Arzon narx va texnik xizmat" }
+      },
+      "colors": {
+        "Oq": "Oq",
+        "Van": "Van"
+      }
+    },
+    "damas-move-max": {
+      "subtitle": "Yangilangan miniven",
+      "tagline": "Kuchaytirilgan va yangilangan",
+      "description": "Damas Move & Max — klassik Damas modelining kuchaytirilgan versiyasi. Yangilangan dvigatel, yaxshilangan salon va zamonaviy dizayn. Kichik biznes va oila uchun ishonchli tanlov.",
+      "specs": {
+        "engine": "1.2L",
+        "power": "84 ot kuchi",
+        "transmission": "5MT",
+        "fuel": "7.0 L/100km",
+        "trunkVolume": "Yuk/Passajir",
+        "seats": "2-7 o'rindiq"
+      },
+      "features": {
+        "Kuchli dvigatel": { "title": "Kuchli dvigatel", "description": "1.2L dvigatel - Damas'dan kuchli" },
+        "Zamonaviy dizayn": { "title": "Zamonaviy dizayn", "description": "Yangilangan tashqi ko'rinish" },
+        "Xavfsizlik": { "title": "Xavfsizlik", "description": "Yaxshilangan xavfsizlik tizimlari" },
+        "Keng tanlov": { "title": "Keng tanlov", "description": "Move va Max versiyalari" }
+      },
+      "colors": {
+        "Bej": "Bej",
+        "Oq": "Oq",
+        "Kumush": "Kumush"
+      }
+    }
+  },
+  "news_items": {
+    "categories": {
+      "Yangi model": "Yangi model",
+      "Aksiya": "Aksiya",
+      "Yangilik": "Yangilik",
+      "Xizmat": "Xizmat"
+    },
+    "chevrolet-tracker-2026-yangilangan-versiya": {
+      "title": "Chevrolet Tracker 2026 — yangilangan versiya taqdim etildi",
+      "excerpt": "Farg'ona Avtotexxizmat-F showroomida Tracker-ning yangilangan 2026 yil versiyasi rasman taqdim etildi. Yangi model zamonaviy dizayn va kengaytirilgan xususiyatlar bilan jihozlangan.",
+      "content": "<p>Farg'ona Avtotexxizmat-F showroomida Tracker-ning yangilangan 2026 yil versiyasi rasman taqdim etildi. Yangi model zamonaviy dizayn va kengaytirilgan xususiyatlar bilan jihozlangan. Ushbu modelda haydovchi va yo'lovchilar uchun qulayliklar yanada oshirildi.</p><p>Yangi Tracker quyidagi o'zgarishlarga ega:</p><ul><li>Yangilangan old panjara va LED faralar.</li><li>Kengaytirilgan multimedia tizimi va raqamli asboblar paneli.</li><li>Yaxshilangan xavfsizlik tizimlari, jumladan avtomatik to'xtash yordamchisi.</li><li>Yoqilg'i tejamkorligi oshirilgan yangi avlod dvigateli.</li></ul><p>Avtomobilni bugunoq dillerimizdan xarid qilishingiz mumkin. Batafsil ma'lumot uchun biz bilan bog'laning.</p>"
+    },
+    "foizsiz-muddatli-tolov-2026-yanvar": {
+      "title": "Foizsiz muddatli to'lov: 2026 yil yanvar imkoniyatlari",
+      "excerpt": "Yanvar oyida Chevrolet avtomobillarini 0% foiz bilan muddatli to'lovga sotib olish imkoniyati.",
+      "content": "<p>Yanvar oyida Chevrolet avtomobillarini 0% foiz bilan muddatli to'lovga sotib olish imkoniyati taqdim etiladi. Bu aksiya doirasida siz:</p><ul><li>Chevrolet Onix va Tracker modellari uchun maxsus shartlar.</li><li>Boshlang'ich to'lov 30% dan boshlanadi.</li><li>To'lov muddati 18 oygacha foizsiz.</li></ul><p>Aksiya muddati cheklangan. Shoshiling, imkoniyatdan foydalanib qoling!</p>"
+    },
+    "chevrolet-tahoe-2026-kuchli-v8": {
+      "title": "Chevrolet Tahoe 2026: kuchli V8 va yangi Premium paket",
+      "excerpt": "Tahoe-ning yangi avlodi 5.3L V8 dvigatel va yangilangan multimedia tizimi bilan yetib keldi.",
+      "content": "<p>Tahoe-ning yangi avlodi 5.3L V8 dvigatel va yangilangan multimedia tizimi bilan yetib keldi. Bu haqiqiy kuch va hashamat uyg'unligi.</p><p>Yangi modelda nimalar bor?</p><ul><li>5.3L V8 Ecotec3 dvigateli, 355 ot kuchi.</li><li>10 bosqichli avtomat uzatmalar qutisi.</li><li>Premium charm salon va yog'och qoplamalar.</li><li>Magnetic Ride Control suspenziyasi.</li></ul><p>Sinov haydovi (Test Drive) ga yozilish uchun hoziroq qo'ng'iroq qiling.</p>"
+    },
+    "trade-in-xizmati-eski-avtomobilingizni-yangisiga-almashtiring": {
+      "title": "Trade-In xizmati: eski avtomobilingizni yangisiga almashtiring",
+      "excerpt": "Har qanday markadagi avtomobilingizni bozor narxida qabul qilamiz va yangi Chevrolet xarid qilishingizga yordam beramiz.",
+      "content": "<p>Trade-In dasturi orqali eski avtomobilingizni yangi Chevrolet ga almashtirish endi yanada oson. Biz sizning avtomobilingizni bozor narxida baholaymiz va yangi avtomobil narxidan chegirib beramiz.</p><p>Afzalliklari:</p><ul><li>Tezkor baholash va rasmiylashtirish.</li><li>Bozor narxida adolatli baho.</li><li>Eski avtomobilni sotish tashvishlaridan xalos bo'lasiz.</li><li>Yangi avtomobilni bir kun ichida haydab ketishingiz mumkin.</li></ul><p>Batafsil ma'lumot uchun Trade-In bo'limiga murojaat qiling.</p>"
+    }
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "common": {
+    "menu_open": "Open menu",
+    "menu_close": "Close menu",
+    "skip_to_content": "Skip to main content",
+    "toggle_theme": "Toggle theme",
+    "prev_image": "Previous image",
+    "next_image": "Next image",
+    "image": "Image",
+    "prev_slide": "Previous slide",
+    "next_slide": "Next slide",
+    "slide": "Slide"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "news": "News",
+    "models": "Models",
+    "contact": "Contact",
+    "location": "Location"
+  },
+  "hero": {
+    "official_dealer": "Official Dealer",
+    "all_models": "All Models",
+    "slides": [
+      {
+        "title": "CHEVROLET TRACKER",
+        "subtitle": "Bold design. Smart technology. Road confidence.",
+        "button": "Learn More"
+      },
+      {
+        "title": "CHEVROLET TAHOE RST",
+        "subtitle": "Bolder. More refined. More capable.",
+        "button": "Details"
+      },
+      {
+        "title": "CHEVROLET CAPTIVA",
+        "subtitle": "Space, reliability and technology — a family SUV",
+        "button": "Learn More"
+      },
+      {
+        "title": "CHEVROLET TRAVERSE",
+        "subtitle": "A full member of your family",
+        "button": "Details"
+      },
+      {
+        "title": "CHEVROLET TAHOE HC",
+        "subtitle": "True luxury in premium class",
+        "button": "View"
+      }
+    ]
+  },
+  "about": {
+    "label": "Official Chevrolet Dealer",
+    "title_1": "About",
+    "title_2": "Us",
+    "p1": "\"Farg'ona Avtotexxizmat-F\" LLC is the sole official dealer of the Chevrolet brand in Fergana region. We have been operating since 2009 and are recognized as a symbol of trust and quality in the automotive industry.",
+    "p2": "Our company offers customers new car sales, official maintenance services, original spare parts supply, and Trade-In services. An individual approach to every customer is our core principle.",
+    "p3": "In our showroom, you can see all current Chevrolet models, take a test drive, and purchase a car with convenient installment plans.",
+    "stats": {
+      "experience": "Years of experience",
+      "clients": "Satisfied customers",
+      "serviced": "Vehicles serviced",
+      "warranty": "Official warranty"
+    }
+  },
+  "models": {
+    "section_title_1": "Popular",
+    "section_title_2": "Models",
+    "section_subtitle": "The most popular Chevrolet models — choose and drive.",
+    "details": "Details",
+    "all_models": "All Models",
+    "back": "Home",
+    "all": "All",
+    "catalog_label": "Official dealer catalog",
+    "page_title_1": "All",
+    "page_title_2": "Models",
+    "page_subtitle": "models — official Fergana Chevrolet range",
+    "price_from": "Price from",
+    "currency": "UZS"
+  },
+  "news": {
+    "label": "Latest updates",
+    "title_1": "Latest",
+    "title_2": " News",
+    "all": "View All",
+    "read_more": "Read More",
+    "page_label": "All news",
+    "page_title_1": "News",
+    "page_title_2": " Archive",
+    "back": "Go back"
+  },
+  "contact": {
+    "title": "Contact",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "phone_label": "Phone number",
+    "phone_placeholder": "__ ___ __ __",
+    "model_label": "Model",
+    "submit": "Submit",
+    "success_title": "Your request has been received!",
+    "success_subtitle": "We will contact you shortly.",
+    "privacy": "By clicking submit, you agree to",
+    "privacy_link": "personal data processing",
+    "privacy_end": "."
+  },
+  "location": {
+    "title_1": "Our",
+    "title_2": "Location",
+    "subtitle": "Visit our showroom and see the latest Chevrolet models in person.",
+    "label": "Official Dealer",
+    "company_name": "\"FARG'ONA AVTOTEXXIZMAT-F\" LLC",
+    "address_label": "Address",
+    "address": "Fergana region, Fergana city, Airport street, 78",
+    "phone_label": "Phone",
+    "email_label": "Email",
+    "hours_label": "Working hours",
+    "hours": "Monday – Saturday: 09:00 – 18:00\nSunday: Closed",
+    "call": "Call Now"
+  },
+  "footer": {
+    "description": "Providing you with the best cars and ensuring the highest level of service is our goal.",
+    "company": "Company",
+    "models": "Models",
+    "contact_title": "Contact",
+    "phone_label": "Phone",
+    "email_label": "Email",
+    "hours_label": "Working hours",
+    "hours": "Mon–Sat: 09:00–18:00",
+    "rights": "All rights reserved.",
+    "official_dealer": "Official Chevrolet Dealer"
+  },
+  "car_detail": {
+    "home": "Home",
+    "models": "Models",
+    "back": "Back",
+    "price_from": "Price from",
+    "currency": "UZS",
+    "monthly": "Or from",
+    "monthly_suffix": "UZS/mo",
+    "color_label": "Color",
+    "color_note": "* Check color availability with dealer",
+    "safety": "Safety Rating",
+    "order": "Order Now",
+    "send_request": "Send Request",
+    "specs_title_1": "Technical",
+    "specs_title_2": "Specifications",
+    "engine": "Engine",
+    "power": "Power",
+    "transmission": "Transmission",
+    "fuel": "Fuel consumption",
+    "trunk": "Trunk volume",
+    "seats": "Seats",
+    "about_title_1": "About",
+    "about_title_2": "Model",
+    "features_title_1": "Key",
+    "features_title_2": "Features",
+    "benefits": [
+      "Interest-free installment plan",
+      "5-year official warranty",
+      "Trade-In service",
+      "Free first maintenance service"
+    ],
+    "other_models_1": "Other",
+    "other_models_2": "Models",
+    "view_all": "All"
+  },
+  "cars": {
+    "tracker": {
+      "subtitle": "Compact crossover",
+      "tagline": "Bold design. Smart technology. Road confidence.",
+      "description": "Chevrolet Tracker is a new generation urban crossover combining advanced technologies, striking design, and practical comfort. With a 1.2L turbo engine producing 132 hp and a 6th-speed automatic transmission, it easily adapts to both city rhythm and suburban trips.",
+      "badge": "Popular",
+      "specs": {
+        "engine": "1.2 Turbo",
+        "power": "132 hp",
+        "transmission": "6 AT",
+        "fuel": "6.9 L/100km",
+        "trunkVolume": "393 L",
+        "seats": "5 seats"
+      },
+      "features": {
+        "Panorama lyuk": { "title": "Panoramic Sunroof", "description": "Panoramic glass sunroof makes the interior brighter" },
+        "360° kamera": { "title": "360° Camera", "description": "Surround view camera system for easy parking" },
+        "Apple CarPlay": { "title": "Apple CarPlay", "description": "iPhone and Android Auto integration" },
+        "Avtomatik tormozlash": { "title": "Automatic Braking", "description": "Autonomous emergency braking system" }
+      },
+      "colors": {
+        "Oq": "White",
+        "Ko'k": "Blue",
+        "Qora": "Black",
+        "Kumush": "Silver",
+        "Qizil": "Red",
+        "To'q ko'k": "Dark Blue",
+        "Kulrang": "Gray"
+      }
+    },
+    "captiva": {
+      "subtitle": "Family crossover",
+      "tagline": "Space, confidence and technology",
+      "description": "Chevrolet Captiva is a spacious, technological SUV designed for everyday comfort and long journeys. With front-wheel drive, a turbo engine, and a smooth CVT transmission, Captiva offers the driver balanced efficiency and control. Available in 5nd- or 7nd-seat configurations.",
+      "badge": "New",
+      "specs": {
+        "engine": "1.5 Turbo",
+        "power": "149 hp",
+        "transmission": "CVT",
+        "fuel": "7.5 L/100km",
+        "trunkVolume": "489/1081 L",
+        "seats": "5-7 seats"
+      },
+      "features": {
+        "Panorama lyuk": { "title": "Panoramic Sunroof", "description": "Wide panoramic glass sunroof" },
+        "360° kamera": { "title": "360° Camera", "description": "Circular view system" },
+        "18\" disklar": { "title": "18\" Alloys", "description": "18-inch light alloy wheels" },
+        "LED faralar": { "title": "LED Headlights", "description": "Bright LED automotive headlights" }
+      },
+      "colors": {
+        "Oq": "White",
+        "Kumush": "Silver",
+        "Qora": "Black",
+        "Kulrang": "Gray",
+        "Qizil": "Red"
+      }
+    },
+    "traverse": {
+      "name": "Traverse",
+      "subtitle": "3-row crossover",
+      "tagline": "A full member of your family",
+      "description": "Chevrolet Traverse is a reliable crossover that will become a full member of your family. Built with advanced technologies, Traverse helps you achieve your biggest plans. Handsnd-free trunk release, wireless charging, 360-degree camera, and more.",
+      "badge": "Discount",
+      "specs": {
+        "engine": "3.6L V6",
+        "power": "318 hp",
+        "transmission": "9 AT",
+        "fuel": "10.0 L/100km",
+        "trunkVolume": "651/2781 L",
+        "seats": "7-8 seats"
+      },
+      "features": {
+        "Qo'lsiz bagaj": { "title": "Handsnd-free Trunk", "description": "Open the trunk with a simple kick motion under the bumper" },
+        "360° kamera": { "title": "360° Camera", "description": "Full surround view system" },
+        "Simsiz zaryadlash": { "title": "Wireless Charging", "description": "Qi standard inductive charging" },
+        "Uzoq chiroq avto": { "title": "Auto High Beam", "description": "Automatic adjustment when oncoming traffic is detected" }
+      },
+      "colors": {
+        "Oq": "White",
+        "Qora": "Black",
+        "Kulrang": "Gray",
+        "Kumush": "Silver"
+      }
+    },
+    "traverse-z71": {
+      "name": "Traverse Z71",
+      "subtitle": "Off-road crossover",
+      "tagline": "Reliable in all road conditions",
+      "description": "Chevrolet Traverse Z71 is a powerful and spacious AWD SUV designed for active family life and confident driving in any road conditions. Equipped with a 328-hp 2.5L turbo gasoline engine and an 8nd-speed automatic transmission.",
+      "specs": {
+        "engine": "2.5 Turbo",
+        "power": "328 hp",
+        "transmission": "8 AT",
+        "fuel": "10.5 L/100km",
+        "trunkVolume": "651 L",
+        "seats": "7 seats"
+      },
+      "features": {
+        "To'liq yuritma": { "title": "All-Wheel Drive", "description": "Twin-clutch AWD system" },
+        "Terrain Mode": { "title": "Terrain Mode", "description": "Select from various road modes" },
+        "Hill Descent": { "title": "Hill Descent", "description": "Hill descent assistance system" },
+        "Adaptive amortizator": { "title": "Adaptive Dampers", "description": "Adapts to vibration frequency" }
+      },
+      "colors": {
+        "To'q ko'k": "Dark Blue",
+        "Qora": "Black",
+        "Oq": "White"
+      }
+    },
+    "tahoe-rst": {
+      "name": "Tahoe RST",
+      "subtitle": "Powerful full-size SUV",
+      "tagline": "Bolder. More refined.",
+      "description": "The new Chevrolet Tahoe is a legendary and large-size SUV, the embodiment of impressive power that belongs only to you. Powered by a 5.3L V8 with 343 hp, equipped with a 10nd-speed automatic and adaptive suspension.",
+      "badge": "Premium",
+      "specs": {
+        "engine": "5.3L V8",
+        "power": "343 hp",
+        "transmission": "10 AT",
+        "fuel": "12.5 L/100km",
+        "trunkVolume": "722/3480 L",
+        "seats": "8 seats"
+      },
+      "features": {
+        "V8 dvigatel": { "title": "V8 Engine", "description": "Powerful 5.3 L Ecotec3 engine" },
+        "Magnetic Ride": { "title": "Magnetic Ride", "description": "Magnetically controlled suspension system" },
+        "Bose audio": { "title": "Bose Audio", "description": "High-quality audio system with 9 speakers" },
+        "RST dizayn": { "title": "RST Design", "description": "Sport-style black exterior elements" }
+      },
+      "colors": {
+        "Oq": "White",
+        "Qora": "Black",
+        "Kulrang": "Gray",
+        "To'q ko'k": "Dark Blue"
+      }
+    },
+    "tahoe-hc": {
+      "name": "Tahoe High Country",
+      "subtitle": "Premium full-size SUV",
+      "tagline": "Embodiment of incredible power",
+      "description": "The new Chevrolet Tahoe High Country 2025 is a legendary full-size SUV. Equipped with a 420nd-hp 6.2L V8 engine, 10th-speed automatic, and adaptive air suspension.",
+      "badge": "Top",
+      "specs": {
+        "engine": "6.2L V8",
+        "power": "420 hp",
+        "transmission": "10 AT",
+        "fuel": "13.5 L/100km",
+        "trunkVolume": "722/3480 L",
+        "seats": "7 seats"
+      },
+      "features": {
+        "6.2L V8": { "title": "6.2L V8", "description": "Most powerful Ecotec3 engine" },
+        "Air Suspension": { "title": "Air Suspension", "description": "Adaptive air suspension system" },
+        "Head-Up Display": { "title": "Head-Up Display", "description": "Projects info onto the windshield" },
+        "HC Interior": { "title": "HC Interior", "description": "High Country exclusive interior design" }
+      },
+      "colors": {
+        "Marvarid oq": "Pearl White",
+        "Qora": "Black",
+        "Bej": "Beige"
+      }
+    },
+    "onix": {
+      "subtitle": "Modern sedan",
+      "tagline": "Everything about it",
+      "description": "Chevrolet Onix is a new model combining bright design, modern interior, and all necessary options for comfort and safety. An economical and modern sedan, perfect for urban life.",
+      "badge": "Discount",
+      "specs": {
+        "engine": "1.2 Turbo",
+        "power": "132 hp",
+        "transmission": "6 AT",
+        "fuel": "6.2 L/100km",
+        "trunkVolume": "469 L",
+        "seats": "5 seats"
+      },
+      "features": {
+        "Sunroof": { "title": "Sunroof", "description": "Electronically controlled sunroof" },
+        "Smart Entry": { "title": "Smart Entry", "description": "Keyless entry and start system" },
+        "Parking Sensors": { "title": "Parking Sensors", "description": "Front and rear parking sensors" },
+        "Turbo": { "title": "Turbo Engine", "description": "High dynamics and efficiency" }
+      },
+      "colors": {
+        "Oq": "White",
+        "Qora": "Black",
+        "To'q ko'k": "Dark Blue",
+        "Kulrang": "Gray",
+        "Pushti": "Pink"
+      }
+    },
+    "cobalt-mcm": {
+      "subtitle": "Updated sedan",
+      "tagline": "Refined and modern",
+      "description": "Chevrolet Cobalt MCM is an updated version of the popular Cobalt model. Featuring modern design, improved safety systems, and comfort. A reliable sedan adapted for the roads of Uzbekistan.",
+      "specs": {
+        "engine": "1.5L",
+        "power": "106 hp",
+        "transmission": "6 AT",
+        "fuel": "6.7 L/100km",
+        "trunkVolume": "563 L",
+        "seats": "5 seats"
+      },
+      "features": {
+        "New Design": { "title": "New Design", "description": "MCM-style taillights and grille" },
+        "ABS+EBD": { "title": "ABS+EBD", "description": "Improved braking system" },
+        "Comfort": { "title": "Comfort", "description": "Soft and spacious interior" },
+        "Reliability": { "title": "Reliability", "description": "Time-tested technology" }
+      },
+      "colors": {
+        "Oq": "White",
+        "Qora": "Black",
+        "To'q kulrang": "Dark Gray",
+        "Kumush": "Silver"
+      }
+    },
+    "cobalt": {
+      "subtitle": "Budget sedan",
+      "tagline": "Comfort for everyone",
+      "description": "Chevrolet Cobalt is a subcompact front-wheel-drive sedan with neutral design, ergonomic and comfortable interior according to European B-segment standards, featuring time-tested technical filling.",
+      "specs": {
+        "engine": "1.5L",
+        "power": "106 hp",
+        "transmission": "6 AT/5MT",
+        "fuel": "6.7 L/100km",
+        "trunkVolume": "563 L",
+        "seats": "5 seats"
+      },
+      "features": {
+        "Trunk Space": { "title": "Spacious Trunk", "description": "Record-breaking 563-liter trunk volume" },
+        "AC": { "title": "Air Conditioning", "description": "Maintains a pleasant temperature in the cabin" },
+        "Audio": { "title": "Audio System", "description": "Supports USB and Bluetooth" },
+        "Engine": { "title": "Durable Engine", "description": "Economical and long-lasting motor" }
+      },
+      "colors": {
+        "Oq": "White",
+        "Qizil": "Red",
+        "Ko'k": "Blue",
+        "Kulrang": "Gray"
+      }
+    },
+    "malibu-xl": {
+      "subtitle": "Business sedan",
+      "tagline": "Modern classic design",
+      "description": "Malibu XL 2023 is designed for the urban environment and combines the most modern design, technology, quality, and safety. A bold, confident, and attractive appearance is combined with a spacious and luxurious interior. Flagship sedan of the middle and high class.",
+      "specs": {
+        "engine": "2.0 Turbo",
+        "power": "236 hp",
+        "transmission": "9 AT",
+        "fuel": "7.0 L/100km",
+        "trunkVolume": "447 L",
+        "seats": "5 seats"
+      },
+      "features": {
+        "Turbo Engine": { "title": "Turbo Engine", "description": "Modern powerful 2.0 L motor" },
+        "Ventilation": { "title": "Ventilation", "description": "Seat cooling and heating system" },
+        "Safety": { "title": "Safety", "description": "10 airbags for maximum protection" },
+        "Display": { "title": "Media Screen", "description": "High-quality touchscreen display" }
+      },
+      "colors": {
+        "Qizil": "Red",
+        "Qora": "Black",
+        "Oq": "White",
+        "To'q ko'k": "Dark Blue"
+      }
+    },
+    "labo": {
+      "subtitle": "Light truck",
+      "tagline": "Your reliable cargo partner",
+      "description": "Chevrolet Labo is a reliable light commercial vehicle designed for small business and everyday cargo transportation. Ideal choice for small entrepreneurs due to economical fuel consumption and affordable price.",
+      "specs": {
+        "engine": "0.8L",
+        "power": "38 hp",
+        "transmission": "5MT",
+        "fuel": "7.5 L/100km",
+        "trunkVolume": "Flatbed",
+        "seats": "2 seats"
+      },
+      "features": {
+        "Commercial": { "title": "Commercial", "description": "Best face for urban cargo transportation" },
+        "Payload": { "title": "Payload", "description": "Ability to carry up to 550 kg" },
+        "Dimensions": { "title": "Dimensions", "description": "Perfect for navigating narrow streets" },
+        "Reliability": { "title": "Reliability", "description": "Simple and durable construction" }
+      },
+      "colors": {
+        "Oq": "White"
+      }
+    },
+    "damas": {
+      "subtitle": "Minivan",
+      "tagline": "Compactness and comfort",
+      "description": "Chevrolet Damas is one of the most popular minivans in Uzbekistan. Reliable and economical commercial transport for carrying cargo and passengers. Compact dimensions make city driving easy.",
+      "specs": {
+        "engine": "0.8L",
+        "power": "38 hp",
+        "transmission": "5MT",
+        "fuel": "6.5 L/100km",
+        "trunkVolume": "Cargo/Pass",
+        "seats": "2-7 seats"
+      },
+      "features": {
+        "Kompakt": { "title": "Compact", "description": "Easy maneuvering in narrow streets" },
+        "Iqtisodiy": { "title": "Economical", "description": "Low fuel consumption" },
+        "Ikki funksiya": { "title": "Dual Function", "description": "Ability to carry both cargo and passengers" },
+        "Hamyonbop": { "title": "Affordable", "description": "Low price and maintenance cost" }
+      },
+      "colors": {
+        "Oq": "White",
+        "Van": "Van"
+      }
+    },
+    "damas-move-max": {
+      "subtitle": "Updated minivan",
+      "tagline": "Reinforced and updated",
+      "description": "Damas Move & Max is a reinforced version of the classic Damas model. Featuring an updated engine, improved interior, and modern design. A reliable choice for small business and families.",
+      "specs": {
+        "engine": "1.2L",
+        "power": "84 hp",
+        "transmission": "5MT",
+        "fuel": "7.0 L/100km",
+        "trunkVolume": "Cargo/Pass",
+        "seats": "2-7 seats"
+      },
+      "features": {
+        "Kuchli dvigatel": { "title": "Powerful Engine", "description": "1.2L engine — more powerful than standard Damas" },
+        "Zamonaviy dizayn": { "title": "Modern Design", "description": "Updated exterior appearance" },
+        "Xavfsizlik": { "title": "Safety", "description": "Improved safety systems" },
+        "Keng tanlov": { "title": "Wide Choice", "description": "Move and Max versions" }
+      },
+      "colors": {
+        "Bej": "Beige",
+        "Oq": "White",
+        "Kumush": "Silver"
+      }
+    }
+  },
+  "news_items": {
+    "categories": {
+      "Yangi model": "New Model",
+      "Aksiya": "Promo",
+      "Yangilik": "News",
+      "Xizmat": "Service"
+    },
+    "chevrolet-tracker-2026-yangilangan-versiya": {
+      "title": "Chevrolet Tracker 2026 — updated version presented",
+      "excerpt": "In the Farg'ona Avtotexxizmat-F showroom, the updated 2026 version of the Tracker was officially presented. The new model features modern design and expanded features.",
+      "content": "<p>In the Farg'ona Avtotexxizmat-F showroom, the updated 2026 version of the Tracker was officially presented. The new model features modern design and expanded features. This model has further increased comfort for the driver and passengers.</p><p>The new Tracker has the following changes:</p><ul><li>Updated front grille and LED headlights.</li><li>Expanded multimedia system and digital instrument panel.</li><li>Improved safety systems, including automatic park assist.</li><li>New generation engine with increased fuel efficiency.</li></ul><p>You can purchase the car at our dealership today. For more information, please contact us.</p>"
+    },
+    "foizsiz-muddatli-tolov-2026-yanvar": {
+      "title": "Interest-free installment: January 2026 opportunities",
+      "excerpt": "In January, there is an opportunity to purchase Chevrolet cars with 0% interest installments.",
+      "content": "<p>In January, an opportunity is provided to purchase Chevrolet cars in installments with 0% interest. Within this campaign, you have access to:</p><ul><li>Special conditions for Chevrolet Onix and Tracker models.</li><li>Down payment starts from 30%.</li><li>Payment period up to 18 months interest-free.</li></ul><p>Promotion period is limited. Hurry to take advantage of the opportunity!</p>"
+    },
+    "chevrolet-tahoe-2026-kuchli-v8": {
+      "title": "Chevrolet Tahoe 2026: powerful V8 and new Premium package",
+      "excerpt": "The new generation of Tahoe has arrived with a 5.3L V8 engine and updated multimedia system.",
+      "content": "<p>The new generation of Tahoe has arrived with a 5.3L V8 engine and updated multimedia system. This is a true combination of power and luxury.</p><p>What's new in the model?</p><ul><li>5.3L V8 Ecotec3 engine, 355 hp.</li><li>10-speed automatic transmission.</li><li>Premium leather interior and wood trim.</li><li>Magnetic Ride Control suspension.</li></ul><p>Call now to sign up for a Test Drive.</p>"
+    },
+    "trade-in-xizmati-eski-avtomobilingizni-yangisiga-almashtiring": {
+      "title": "Trade-In service: exchange your old car for a new one",
+      "excerpt": "We accept your car of any brand at market price and help you buy a new Chevrolet.",
+      "content": "<p>Exchanging your old car for a new Chevrolet through the Trade-In program is now even easier. We will evaluate your car at market price and deduct this amount from the price of the new car.</p><p>Benefits:</p><ul><li>Fast evaluation and processing.</li><li>Fair valuation at market price.</li><li>Free yourself from the worries of selling your old car.</li><li>You can drive away in a new car on the same day.</li></ul><p>For more information, please contact the Trade-In department.</p>"
+    }
+  }
+}

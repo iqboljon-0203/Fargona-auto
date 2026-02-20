@@ -1,8 +1,10 @@
+'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import LangLink from '@/components/LangLink'
 import Image from 'next/image'
-import { Facebook, Instagram, Send, Phone, MapPin, Mail } from 'lucide-react'
+import { Facebook, Instagram, Send, Phone, MapPin, Mail, Youtube, Clock } from 'lucide-react'
+import { useDictionary } from '@/components/DictionaryProvider'
 
 const modelLinks = [
   { name: 'Tracker', href: '/models/tracker' },
@@ -14,23 +16,27 @@ const modelLinks = [
   { name: 'Cobalt', href: '/models/cobalt' },
 ]
 
-const companyLinks = [
-  { name: 'Biz haqimizda', href: '/#about' },
-  { name: 'Yangiliklar', href: '/#news' },
-  { name: 'Barcha modellar', href: '/models' },
-  { name: 'Aloqa', href: '/#contact' },
-]
-
 export default function Footer() {
+  const dict = useDictionary() as any
+  const t = dict.footer
+  const nav = dict.nav
+
+  const localizedCompanyLinks = [
+    { name: nav.home, href: '/' },
+    { name: nav.about, href: '/#about' },
+    { name: nav.news, href: '/#news' },
+    { name: nav.models, href: '/models' },
+    { name: nav.contact, href: '/#contact' },
+  ]
   return (
-    <footer className="bg-zinc-950 text-gray-400 border-t border-zinc-800">
+    <footer className="bg-zinc-100 dark:bg-zinc-950 text-zinc-600 dark:text-gray-400 border-t border-zinc-200 dark:border-zinc-800">
 
       {/* Main footer */}
       <div className="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
         {/* Brand */}
         <div>
-          <Link href="/" className="flex items-center gap-3 mb-5 group w-fit">
+          <LangLink href="/" className="flex items-center gap-3 mb-5 group w-fit">
             <div className="flex items-center justify-center">
               <Image
                 src="/chevrolet.svg"
@@ -41,7 +47,7 @@ export default function Footer() {
               />
             </div>
             <div className="flex flex-col leading-none gap-[1px]" style={{ fontFamily: 'var(--font-rajdhani)' }}>
-              <span className="text-[1.15rem] font-bold text-white tracking-[0.22em] uppercase">
+              <span className="text-[1.15rem] font-bold text-zinc-950 dark:text-white tracking-[0.22em] uppercase">
                 Farg&apos;ona
               </span>
               <span
@@ -56,33 +62,34 @@ export default function Footer() {
                 Auto
               </span>
             </div>
-          </Link>
+          </LangLink>
           <p className="text-sm leading-relaxed mb-5">
-            Sizga eng yaxshi avtomobillarni taqdim etish va xizmat ko&apos;rsatishning yuqori darajasini
-            ta&apos;minlash — bizning maqsadimiz.
+            {t.description}
           </p>
           <div className="flex gap-3">
-            <a href="https://t.me/fargonachevrolet" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-zinc-900 flex items-center justify-center text-gray-400 hover:bg-yellow-500 hover:text-black transition-all">
+            <a href="https://t.me/+fCfNaggJ56ZhMWQ6" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="w-9 h-9 rounded-lg bg-white dark:bg-zinc-900 flex items-center justify-center text-zinc-500 dark:text-gray-400 hover:bg-yellow-500 hover:text-black transition-all shadow-sm dark:shadow-none">
               <Send size={16} />
             </a>
-            <a href="#" className="w-9 h-9 rounded-lg bg-zinc-900 flex items-center justify-center text-gray-400 hover:bg-yellow-500 hover:text-black transition-all">
+            <a href="https://instagram.com/fargona_avtotexxizmat/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-lg bg-white dark:bg-zinc-900 flex items-center justify-center text-zinc-500 dark:text-gray-400 hover:bg-yellow-500 hover:text-black transition-all shadow-sm dark:shadow-none">
               <Instagram size={16} />
             </a>
-            <a href="#" className="w-9 h-9 rounded-lg bg-zinc-900 flex items-center justify-center text-gray-400 hover:bg-yellow-500 hover:text-black transition-all">
+            <a href="https://www.facebook.com/61562625920113" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-lg bg-white dark:bg-zinc-900 flex items-center justify-center text-zinc-500 dark:text-gray-400 hover:bg-yellow-500 hover:text-black transition-all shadow-sm dark:shadow-none">
               <Facebook size={16} />
+            </a>
+            <a href="https://www.youtube.com/@Avtotexxizmat_fargona" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-lg bg-white dark:bg-zinc-900 flex items-center justify-center text-zinc-500 dark:text-gray-400 hover:bg-yellow-500 hover:text-black transition-all shadow-sm dark:shadow-none">
+              <Youtube size={16} />
             </a>
           </div>
         </div>
 
-        {/* Company */}
         <div>
-          <h4 className="text-white font-bold uppercase mb-5 text-sm tracking-widest">Kompaniya</h4>
+          <h4 className="text-zinc-950 dark:text-white font-bold uppercase mb-5 text-sm tracking-widest">{t.company}</h4>
           <ul className="space-y-3">
-            {companyLinks.map(link => (
+            {localizedCompanyLinks.map(link => (
               <li key={link.name}>
-                <Link href={link.href} className="text-sm hover:text-yellow-500 transition-colors flex items-center gap-1.5">
+                <LangLink href={link.href} className="text-sm hover:text-yellow-500 transition-colors flex items-center gap-1.5">
                   {link.name}
-                </Link>
+                </LangLink>
               </li>
             ))}
           </ul>
@@ -90,13 +97,13 @@ export default function Footer() {
 
         {/* Models */}
         <div>
-          <h4 className="text-white font-bold uppercase mb-5 text-sm tracking-widest">Modellar</h4>
+          <h4 className="text-zinc-950 dark:text-white font-bold uppercase mb-5 text-sm tracking-widest">{t.models}</h4>
           <ul className="space-y-3">
             {modelLinks.map(link => (
               <li key={link.name}>
-                <Link href={link.href} className="text-sm hover:text-yellow-500 transition-colors">
+                <LangLink href={link.href} className="text-sm hover:text-yellow-500 transition-colors">
                   {link.name}
-                </Link>
+                </LangLink>
               </li>
             ))}
           </ul>
@@ -104,45 +111,56 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-white font-bold uppercase mb-5 text-sm tracking-widest">Bog&apos;lanish</h4>
-          <ul className="space-y-4 text-sm">
+          <h4 className="text-zinc-950 dark:text-white font-bold uppercase mb-5 text-sm tracking-widest">{t.contact_title}</h4>
+          <ul className="space-y-4">
             <li className="flex items-start gap-3">
-              <MapPin size={16} className="text-yellow-500 shrink-0 mt-0.5" />
-              <span>Farg&apos;ona sh., Aeroport ko&apos;chasi, 78-uy</span>
+              <div className="w-8 h-8 rounded-lg bg-white dark:bg-zinc-900 flex items-center justify-center text-yellow-500 flex-shrink-0">
+                <Phone size={14} />
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-wider text-zinc-400 mb-0.5">{t.phone_label}</p>
+                <a href="tel:+998954002087" className="text-sm text-zinc-800 dark:text-gray-300 hover:text-yellow-500 transition-colors">
+                  +998 95 400 20 87
+                </a>
+              </div>
             </li>
-            <li>
-              <a href="tel:+998954002087" className="flex items-center gap-3 hover:text-yellow-500 transition-colors">
-                <Phone size={16} className="text-yellow-500 shrink-0" />
-                +998 95 400 20 87
-              </a>
+            <li className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white dark:bg-zinc-900 flex items-center justify-center text-yellow-500 flex-shrink-0">
+                <Mail size={14} />
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-wider text-zinc-400 mb-0.5">{t.email_label}</p>
+                <a href="mailto:feravtotech@umail.uz" className="text-sm text-zinc-800 dark:text-gray-300 hover:text-yellow-500 transition-colors">
+                  feravtotech@umail.uz
+                </a>
+              </div>
             </li>
-            <li>
-              <a href="mailto:feravtotech@umail.uz" className="flex items-center gap-3 hover:text-yellow-500 transition-colors">
-                <Mail size={16} className="text-yellow-500 shrink-0" />
-                feravtotech@umail.uz
-              </a>
+            <li className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-white dark:bg-zinc-900 flex items-center justify-center text-yellow-500 flex-shrink-0">
+                <Clock size={14} />
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-wider text-zinc-400 mb-0.5">{t.hours_label}</p>
+                <p className="text-sm text-zinc-800 dark:text-gray-300 line-clamp-1">{t.hours}</p>
+              </div>
             </li>
           </ul>
-
-          {/* Work hours */}
-          <div className="mt-5 pt-4 border-t border-zinc-800">
-            <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Ish vaqti</p>
-            <p className="text-sm text-gray-300">Du–Sha: 09:00 – 18:00</p>
-            <p className="text-sm text-gray-300">Yak: Dam olish</p>
-          </div>
         </div>
+
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-zinc-800">
-        <div className="container mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-600">
-          <p>&copy; {new Date().getFullYear()} Farg&apos;ona Auto — Barcha huquqlar himoyalangan.</p>
-          <p>
-            Rasmiy Chevrolet dilleri —{' '}
-            <span className="text-yellow-500/80 font-semibold uppercase tracking-wider">
-              &ldquo;Farg&apos;ona Avtotexxizmat-F&rdquo; MCHJ
-            </span>
-          </p>
+      <div className="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black/20">
+        <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] md:text-xs">
+          <p>&copy; {new Date().getFullYear()} Farg&apos;ona Auto — {t.rights}</p>
+          <div className="flex items-center gap-4 text-zinc-400">
+            <p>
+              {t.official_dealer} —{' '}
+              <span className="text-zinc-950 dark:text-white font-semibold uppercase tracking-wider">
+                &ldquo;Farg&apos;ona Avtotexxizmat-F&rdquo; MCHJ
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -8,6 +8,8 @@ import { ChevronDown, Send } from 'lucide-react'
 
 
 
+import { useDictionary } from '@/components/DictionaryProvider'
+
 const models = [
   'Chevrolet Tracker',
   'Chevrolet Captiva',
@@ -18,17 +20,42 @@ const models = [
 ]
 
 export default function ContactSection() {
+  const dict = useDictionary() as any
+  const t = dict.contact
+  
   const [form, setForm] = useState({
     name: '',
     phone: '',
     model: models[0],
   })
+  const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 4000)
+    setLoading(true)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
+
+      if (response.ok) {
+        setSent(true)
+        setForm({ name: '', phone: '', model: models[0] })
+      } else {
+        alert('Xatolik yuz berdi. Iltimos qaytadan urinib ko\'ring.')
+      }
+    } catch (error) {
+      console.error('Submission error:', error)
+      alert('Xatolik yuz berdi. Iltimos qaytadan urinib ko\'ring.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -53,29 +80,30 @@ export default function ContactSection() {
           transition={{ duration: 0.5 }}
           className="w-full max-w-xl bg-white/80 dark:bg-white/10 backdrop-blur-md border border-zinc-200 dark:border-white/20 rounded-2xl p-8 shadow-2xl"
         >
-          <h2 className="text-3xl font-bold text-zinc-950 dark:text-white mb-7">Aloqa</h2>
+          <h2 className="text-3xl font-bold text-zinc-950 dark:text-white mb-7">{t.title}</h2>
 
           {sent ? (
             <div className="flex flex-col items-center justify-center h-48 gap-4">
               <div className="w-14 h-14 rounded-full bg-yellow-500 flex items-center justify-center">
                 <Send size={24} className="text-black" />
               </div>
-              <p className="text-white font-semibold text-center">
-                So'rovingiz qabul qilindi!<br />
-                <span className="text-gray-300 font-normal text-sm">Tez orada siz bilan bog'lanamiz.</span>
+              <p className="text-zinc-950 dark:text-white font-semibold text-center">
+                {t.success_title}<br />
+                <span className="text-zinc-600 dark:text-gray-300 font-normal text-sm">{t.success_subtitle}</span>
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               {/* Name */}
               <div>
-                <label className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
-                  Ism
+                <label htmlFor="contact-name" className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
+                  {t.name_label}
                 </label>
                 <input
+                  id="contact-name"
                   required
                   type="text"
-                  placeholder="Ismingiz"
+                  placeholder={t.name_placeholder}
                   value={form.name}
                   onChange={e => setForm({ ...form, name: e.target.value })}
                   className="w-full bg-white dark:bg-white/15 border border-zinc-300 dark:border-white/20 rounded-lg px-4 py-3 text-zinc-950 dark:text-white placeholder-zinc-400 dark:placeholder-gray-400 text-sm focus:outline-none focus:border-yellow-500 transition-colors"
@@ -84,15 +112,16 @@ export default function ContactSection() {
 
               {/* Phone */}
               <div>
-                <label className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
-                  Telefon raqami
+                <label htmlFor="contact-phone" className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
+                  {t.phone_label}
                 </label>
                 <div className="flex items-center bg-white dark:bg-white/15 border border-zinc-300 dark:border-white/20 rounded-lg overflow-hidden focus-within:border-yellow-500 transition-colors">
                   <span className="px-4 py-3 text-zinc-950 dark:text-white font-medium text-sm border-r border-zinc-300 dark:border-white/20 select-none whitespace-nowrap">+998</span>
                   <input
+                    id="contact-phone"
                     required
                     type="tel"
-                    placeholder="__ ___ __ __"
+                    placeholder={t.phone_placeholder}
                     value={form.phone}
                     onChange={e => {
                       const val = e.target.value.replace(/[^0-9 ]/g, '')
@@ -108,11 +137,12 @@ export default function ContactSection() {
 
               {/* Model */}
               <div>
-                <label className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
-                  Model
+                <label htmlFor="contact-model" className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
+                  {t.model_label}
                 </label>
                 <div className="relative">
                   <select
+                    id="contact-model"
                     value={form.model}
                     onChange={e => setForm({ ...form, model: e.target.value })}
                     className="w-full appearance-none bg-white dark:bg-white/15 border border-zinc-300 dark:border-white/20 rounded-lg px-4 py-3 text-zinc-950 dark:text-yellow-400 text-sm focus:outline-none focus:border-yellow-500 transition-colors cursor-pointer"
@@ -128,17 +158,18 @@ export default function ContactSection() {
               {/* Submit */}
               <button
                 type="submit"
-                className="mt-2 w-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold uppercase tracking-widest py-3.5 rounded-lg text-sm transition-colors duration-200"
+                disabled={loading}
+                className="mt-2 w-full bg-yellow-500 hover:bg-yellow-400 disabled:bg-yellow-800 disabled:cursor-not-allowed text-black font-bold uppercase tracking-widest py-3.5 rounded-lg text-sm transition-colors duration-200"
               >
-                Yuborish
+                {loading ? 'Yuborilmoqda...' : t.submit}
               </button>
 
               <p className="text-center text-xs text-zinc-500 dark:text-gray-400 mt-1">
-                Yuborish tugmasini bosib, siz{' '}
+                {t.privacy}{' '}
                 <a href="#" className="underline hover:text-zinc-950 dark:hover:text-white transition-colors">
-                  shaxsiy ma&apos;lumotlarni qayta ishlash
+                  {t.privacy_link}
                 </a>{' '}
-                ga rozilik bildirasiz.
+                {t.privacy_end}
               </p>
             </form>
           )}
