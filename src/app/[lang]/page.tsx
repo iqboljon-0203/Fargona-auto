@@ -1,12 +1,14 @@
 
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import CarShowcase from '@/components/CarShowcase'
-import AboutSection from '@/components/AboutSection'
-import NewsSection from '@/components/NewsSection'
-import ContactSection from '@/components/ContactSection'
-import LocationSection from '@/components/LocationSection'
-import Footer from '@/components/Footer'
+import dynamic from 'next/dynamic'
+
+const CarShowcase = dynamic(() => import('@/components/CarShowcase'))
+const AboutSection = dynamic(() => import('@/components/AboutSection'))
+const NewsSection = dynamic(() => import('@/components/NewsSection'))
+const ContactSection = dynamic(() => import('@/components/ContactSection'))
+const LocationSection = dynamic(() => import('@/components/LocationSection'))
+const Footer = dynamic(() => import('@/components/Footer'))
 
 export default async function Home() {
   return (

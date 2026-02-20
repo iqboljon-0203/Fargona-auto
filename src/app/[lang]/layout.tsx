@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Rajdhani } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import FloatingContact from "@/components/FloatingContact";
-import ViewTracker from "@/components/ViewTracker";
+import dynamic from 'next/dynamic'
 import { i18n, type Locale } from "@/i18n-config";
+
+const FloatingContact = dynamic(() => import('@/components/FloatingContact'))
+const ViewTracker = dynamic(() => import('@/components/ViewTracker'))
 import "../globals.css";
 
 const geistSans = Geist({
