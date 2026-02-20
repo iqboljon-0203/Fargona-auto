@@ -14,9 +14,10 @@ export function generateStaticParams() {
   }))
 }
 
-export default async function NewsDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function NewsDetailPage({ params }: { params: Promise<any> }) {
   const resolvedParams = await params
-  const { slug } = resolvedParams
+  const slug = resolvedParams.slug || resolvedParams.id
   const newsItem = newsData.find((item) => item.slug === slug)
 
   if (!newsItem) {
