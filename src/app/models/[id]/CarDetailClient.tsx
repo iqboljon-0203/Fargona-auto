@@ -41,22 +41,22 @@ export default function CarDetailClient({ car }: { car: Car }) {
   ]
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-950 dark:text-white">
       <Navbar />
 
       {/* Breadcrumb */}
-      <div className="bg-zinc-900 border-b border-zinc-800">
-        <div className="container mx-auto px-6 py-4 flex items-center gap-2 text-sm text-gray-500">
+      <div className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+        <div className="container mx-auto px-6 py-4 flex items-center gap-2 text-sm text-zinc-500 dark:text-gray-500">
           <Link href="/" className="hover:text-yellow-500 transition-colors">Bosh sahifa</Link>
           <ChevronRight size={14} />
           <Link href="/models" className="hover:text-yellow-500 transition-colors">Modellar</Link>
           <ChevronRight size={14} />
-          <span className="text-white">{car.name}</span>
+          <span className="text-zinc-950 dark:text-white">{car.name}</span>
         </div>
       </div>
 
       {/* Hero — Image + Price panel */}
-      <section className="bg-zinc-950">
+      <section className="bg-zinc-50 dark:bg-zinc-950">
         <div className="container mx-auto px-6 py-10">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
 
@@ -65,7 +65,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
               <div className="flex items-center justify-between mb-4">
                 <Link
                   href="/models"
-                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-yellow-500 transition-colors group"
+                  className="flex items-center gap-2 text-sm text-zinc-600 dark:text-gray-400 hover:text-yellow-500 transition-colors group"
                 >
                   <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
                   Orqaga
@@ -78,7 +78,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
               </div>
 
               {/* Main image */}
-              <div className="relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]">
+              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 aspect-[16/9]">
                 {showColorImage && currentColorImage ? (
                   <motion.div
                     key={`color-${activeColor}`}
@@ -143,7 +143,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
                   <button
                     key={i}
                     onClick={() => setActiveImage(i)}
-                    className={`relative flex-1 aspect-video rounded-xl overflow-hidden border-2 transition-all ${i === activeImage ? 'border-yellow-500' : 'border-zinc-800 hover:border-zinc-600'}`}
+                    className={`relative flex-1 aspect-video rounded-xl overflow-hidden border-2 transition-all ${i === activeImage ? 'border-yellow-500' : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600'}`}
                   >
                     <Image src={img} alt="" fill className="object-cover" />
                   </button>
@@ -155,20 +155,20 @@ export default function CarDetailClient({ car }: { car: Car }) {
             <div className="lg:col-span-2 flex flex-col gap-5 lg:sticky lg:top-24">
               <div>
                 <p className="text-xs text-yellow-500 uppercase tracking-widest font-semibold mb-1">{car.subtitle}</p>
-                <h1 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight leading-tight">
+                <h1 className="text-3xl md:text-4xl font-bold text-zinc-950 dark:text-white uppercase tracking-tight leading-tight">
                   {car.name}
                 </h1>
-                <p className="text-gray-400 text-sm mt-2 italic">&ldquo;{car.tagline}&rdquo;</p>
+                <p className="text-zinc-600 dark:text-gray-400 text-sm mt-2 italic">&ldquo;{car.tagline}&rdquo;</p>
               </div>
 
               {/* Price */}
-              <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+              <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 shadow-sm dark:shadow-none">
                 {car.oldPrice && (
-                  <p className="text-sm text-gray-500 line-through mb-0.5">{car.oldPrice} so&apos;m</p>
+                  <p className="text-sm text-zinc-500 dark:text-gray-500 line-through mb-0.5">{car.oldPrice} so&apos;m</p>
                 )}
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Narxidan boshlab</p>
-                <p className="text-3xl font-bold text-white mb-1">
-                  {car.price} <span className="text-base font-normal text-gray-400">so&apos;m</span>
+                <p className="text-xs text-zinc-500 dark:text-gray-500 uppercase tracking-wider mb-1">Narxidan boshlab</p>
+                <p className="text-3xl font-bold text-zinc-950 dark:text-white mb-1">
+                  {car.price} <span className="text-base font-normal text-zinc-500 dark:text-gray-400">so&apos;m</span>
                 </p>
                 <p className="text-sm text-yellow-500">
                   Yoki oyiga <strong>{car.monthlyPayment}</strong> so&apos;mdan
@@ -176,9 +176,9 @@ export default function CarDetailClient({ car }: { car: Car }) {
               </div>
 
               {/* Color picker */}
-              <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
-                <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">
-                  Rang: <span className="text-white font-semibold">{car.colors[activeColor].name}</span>
+              <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 shadow-sm dark:shadow-none">
+                <p className="text-xs text-zinc-500 dark:text-gray-500 uppercase tracking-wider mb-3">
+                  Rang: <span className="text-zinc-950 dark:text-white font-semibold">{car.colors[activeColor].name}</span>
                 </p>
                 <div className="flex gap-3 flex-wrap">
                   {car.colors.map((c, i) => (
@@ -190,25 +190,25 @@ export default function CarDetailClient({ car }: { car: Car }) {
                       className={`w-8 h-8 rounded-full border-2 transition-all ${
                         i === activeColor
                           ? 'border-yellow-500 scale-110 ring-2 ring-yellow-500/30'
-                          : 'border-zinc-700 hover:border-zinc-400'
+                          : 'border-zinc-300 dark:border-zinc-700 hover:border-zinc-400'
                       }`}
                     />
                   ))}
                 </div>
-                <p className="text-xs text-gray-600 mt-2">* Rang mavjudligini dillerda tekshiring</p>
+                <p className="text-xs text-zinc-500 dark:text-gray-600 mt-2">* Rang mavjudligini dillerda tekshiring</p>
               </div>
 
               {/* Safety */}
               <div className="flex items-center gap-2">
                 <Shield size={16} className="text-yellow-500" />
-                <span className="text-xs text-gray-400 uppercase tracking-wider">Xavfsizlik reytingi:</span>
+                <span className="text-xs text-zinc-500 dark:text-gray-400 uppercase tracking-wider">Xavfsizlik reytingi:</span>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
                       size={14}
                       fill={i < car.safetyRating ? '#EAB308' : 'none'}
-                      className={i < car.safetyRating ? 'text-yellow-500' : 'text-zinc-700'}
+                      className={i < car.safetyRating ? 'text-yellow-500' : 'text-zinc-300 dark:text-zinc-700'}
                     />
                   ))}
                 </div>
@@ -225,7 +225,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
                 </a>
                 <Link
                   href="/#contact"
-                  className="flex items-center justify-center gap-2 border border-zinc-700 hover:border-yellow-500 text-white font-semibold uppercase tracking-wider py-3.5 rounded-xl transition-colors text-sm"
+                  className="flex items-center justify-center gap-2 border border-zinc-300 dark:border-zinc-700 hover:border-yellow-500 text-zinc-950 dark:text-white font-semibold uppercase tracking-wider py-3.5 rounded-xl transition-colors text-sm"
                 >
                   <Send size={16} />
                   So&apos;rov yuborish
@@ -238,7 +238,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
       </section>
 
       {/* Specs */}
-      <section id="specs" className="bg-zinc-900 border-y border-zinc-800 py-14">
+      <section id="specs" className="bg-white dark:bg-zinc-900 border-y border-zinc-200 dark:border-zinc-800 py-14">
         <div className="container mx-auto px-6">
           <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8">
             Texnik <span className="text-yellow-500">Ko&apos;rsatkichlar</span>
@@ -247,13 +247,13 @@ export default function CarDetailClient({ car }: { car: Car }) {
             {specItems.map(({ icon: Icon, label, value }) => (
               <div
                 key={label}
-                className="bg-zinc-950 border border-zinc-800 rounded-xl p-4 text-center flex flex-col items-center gap-2 hover:border-yellow-500/40 transition-colors"
+                className="bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 text-center flex flex-col items-center gap-2 hover:border-yellow-500/40 transition-colors"
               >
                 <div className="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center">
                   <Icon size={18} className="text-yellow-500" />
                 </div>
-                <p className="text-base font-bold text-white leading-tight">{value}</p>
-                <p className="text-[10px] text-gray-500 uppercase tracking-wider">{label}</p>
+                <p className="text-base font-bold text-zinc-950 dark:text-white leading-tight">{value}</p>
+                <p className="text-[10px] text-zinc-500 dark:text-gray-500 uppercase tracking-wider">{label}</p>
               </div>
             ))}
           </div>
@@ -261,7 +261,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
       </section>
 
       {/* Description + Features */}
-      <section className="bg-zinc-950 py-16">
+      <section className="bg-zinc-50 dark:bg-zinc-950 py-16">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
 
@@ -269,7 +269,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
               <h2 className="text-2xl font-bold uppercase tracking-tighter mb-5">
                 Model <span className="text-yellow-500">Haqida</span>
               </h2>
-              <p className="text-gray-400 leading-relaxed text-sm">{car.description}</p>
+              <p className="text-zinc-600 dark:text-gray-400 leading-relaxed text-sm">{car.description}</p>
               <div className="mt-8 space-y-3">
                 {[
                   "Foizsiz muddatli to'lov imkoniyati",
@@ -279,7 +279,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
                 ].map(item => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle2 size={16} className="text-yellow-500 shrink-0" />
-                    <span className="text-sm text-gray-300">{item}</span>
+                    <span className="text-sm text-zinc-600 dark:text-gray-300">{item}</span>
                   </div>
                 ))}
               </div>
@@ -293,11 +293,11 @@ export default function CarDetailClient({ car }: { car: Car }) {
                 {car.features.map(f => (
                   <div
                     key={f.title}
-                    className="bg-zinc-900 border border-zinc-800 hover:border-yellow-500/40 transition-colors rounded-xl p-4"
+                    className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-yellow-500/40 transition-colors rounded-xl p-4 shadow-sm dark:shadow-none"
                   >
                     <div className="text-2xl mb-3">{f.icon}</div>
-                    <p className="font-bold text-white text-sm mb-1">{f.title}</p>
-                    <p className="text-xs text-gray-500 leading-relaxed">{f.description}</p>
+                    <p className="font-bold text-zinc-950 dark:text-white text-sm mb-1">{f.title}</p>
+                    <p className="text-xs text-zinc-500 dark:text-gray-500 leading-relaxed">{f.description}</p>
                   </div>
                 ))}
               </div>
@@ -308,13 +308,13 @@ export default function CarDetailClient({ car }: { car: Car }) {
       </section>
 
       {/* Other models */}
-      <section className="bg-zinc-900 border-t border-zinc-800 py-14">
+      <section className="bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 py-14">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold uppercase tracking-tighter">
               Boshqa <span className="text-yellow-500">Modellar</span>
             </h2>
-            <Link href="/models" className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-yellow-500 transition-colors group">
+            <Link href="/models" className="flex items-center gap-1.5 text-sm text-zinc-500 dark:text-gray-400 hover:text-yellow-500 transition-colors group">
               Barchasi <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -323,7 +323,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
               <Link
                 key={c.id}
                 href={`/models/${c.id}`}
-                className="group bg-zinc-950 border border-zinc-800 hover:border-yellow-500/40 rounded-xl overflow-hidden transition-colors"
+                className="group bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-yellow-500/40 rounded-xl overflow-hidden transition-colors"
               >
                 <div className="relative h-32 overflow-hidden">
                   <Image
@@ -332,11 +332,11 @@ export default function CarDetailClient({ car }: { car: Car }) {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 dark:from-zinc-950 to-transparent" />
                 </div>
                 <div className="p-3">
-                  <p className="text-xs font-bold text-white group-hover:text-yellow-500 transition-colors">{c.name}</p>
-                  <p className="text-[10px] text-gray-500 mt-0.5">{c.price} so&apos;m</p>
+                  <p className="text-xs font-bold text-zinc-950 dark:text-white group-hover:text-yellow-500 transition-colors">{c.name}</p>
+                  <p className="text-[10px] text-zinc-500 dark:text-gray-500 mt-0.5">{c.price} so&apos;m</p>
                 </div>
               </Link>
             ))}

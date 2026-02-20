@@ -30,11 +30,11 @@ export default function ModelsPage() {
     cat === 'Barchasi' ? carsData.length : carsData.filter(c => c.category === active).length
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-950 dark:text-white">
       <Navbar />
 
       {/* Hero Header */}
-      <div className="relative bg-zinc-950 border-b border-zinc-800 overflow-hidden">
+      <div className="relative bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-500/10 via-transparent to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent" />
 
@@ -55,7 +55,7 @@ export default function ModelsPage() {
               <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
                 Barcha <span className="text-yellow-500">Modellar</span>
               </h1>
-              <p className="text-gray-400 text-sm mt-3">
+              <p className="text-zinc-600 dark:text-gray-400 text-sm mt-3">
                 {carsData.length} ta model — Farg&apos;ona Chevrolet rasmiy assortimenti
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function ModelsPage() {
               {[{ v: '6', l: 'SUV model' }, { v: '3', l: 'Sedan' }, { v: '2', l: 'LCV/Pickup' }].map(s => (
                 <div key={s.l}>
                   <p className="text-2xl font-bold text-yellow-500">{s.v}</p>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider">{s.l}</p>
+                  <p className="text-xs text-zinc-500 dark:text-gray-500 uppercase tracking-wider">{s.l}</p>
                 </div>
               ))}
             </div>
@@ -81,11 +81,11 @@ export default function ModelsPage() {
               className={`px-5 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wider transition-all duration-200 ${
                 active === cat.id
                   ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/25'
-                  : 'bg-zinc-900 border border-zinc-800 text-gray-400 hover:text-white hover:border-zinc-600'
+                  : 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-gray-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-400 dark:hover:border-zinc-600'
               }`}
             >
               {cat.label}
-              <span className={`ml-2 text-xs rounded-full px-1.5 py-0.5 ${active === cat.id ? 'bg-black/20 text-black' : 'bg-zinc-800 text-gray-500'}`}>
+              <span className={`ml-2 text-xs rounded-full px-1.5 py-0.5 ${active === cat.id ? 'bg-black/20 text-black' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-gray-500'}`}>
                 {cat.id === 'Barchasi' ? carsData.length : carsData.filter(c => c.category === cat.id).length}
               </span>
             </button>
@@ -108,7 +108,7 @@ export default function ModelsPage() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 hover:border-yellow-500/50 transition-all duration-300 group flex flex-col shadow-xl shadow-black/30"
+                className="bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-yellow-500/50 transition-all duration-300 group flex flex-col shadow-lg dark:shadow-black/30"
               >
                 {/* Image */}
                 <div className="relative h-52 overflow-hidden">
@@ -119,7 +119,7 @@ export default function ModelsPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/10 dark:from-zinc-900 via-transparent to-transparent" />
                   {car.badge && (
                     <span className={`absolute top-3 left-3 text-[10px] font-bold uppercase px-2.5 py-1 rounded-full tracking-widest shadow-md ${car.badgeColor}`}>
                       {car.badge}
@@ -133,23 +133,23 @@ export default function ModelsPage() {
                 {/* Info */}
                 <div className="p-5 flex flex-col flex-1">
                   <div className="mb-3">
-                    <h3 className="text-base font-bold text-white group-hover:text-yellow-500 transition-colors mb-0.5 leading-tight">
+                    <h3 className="text-base font-bold text-zinc-950 dark:text-white group-hover:text-yellow-500 transition-colors mb-0.5 leading-tight">
                       {car.name}
                     </h3>
-                    <p className="text-xs text-gray-500">{car.subtitle}</p>
+                    <p className="text-xs text-zinc-500 dark:text-gray-500">{car.subtitle}</p>
                   </div>
 
                   {/* Specs row */}
-                  <div className="flex gap-3 mb-4 pb-4 border-b border-zinc-800 flex-wrap">
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                  <div className="flex gap-3 mb-4 pb-4 border-b border-zinc-200 dark:border-zinc-800 flex-wrap">
+                    <div className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-gray-400">
                       <Fuel size={12} className="text-yellow-500 shrink-0" />
                       {car.specs.engine}
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                    <div className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-gray-400">
                       <Gauge size={12} className="text-yellow-500 shrink-0" />
                       {car.specs.power}
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                    <div className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-gray-400">
                       <Settings2 size={12} className="text-yellow-500 shrink-0" />
                       {car.specs.transmission}
                     </div>
@@ -158,17 +158,17 @@ export default function ModelsPage() {
                   {/* Price + Button */}
                   <div className="mt-auto flex items-center justify-between gap-3">
                     <div>
-                      <p className="text-[10px] text-gray-500 uppercase tracking-wider leading-none mb-1">
+                      <p className="text-[10px] text-zinc-500 dark:text-gray-500 uppercase tracking-wider leading-none mb-1">
                         Narxidan boshlab
                       </p>
-                      <p className="text-base font-bold text-white leading-none">
+                      <p className="text-base font-bold text-zinc-950 dark:text-white leading-none">
                         {car.price}
-                        <span className="text-xs font-normal text-gray-400 ml-1">so&apos;m</span>
+                        <span className="text-xs font-normal text-zinc-500 dark:text-gray-400 ml-1">so&apos;m</span>
                       </p>
                     </div>
                     <Link
                       href={`/models/${car.id}`}
-                      className="shrink-0 flex items-center gap-1.5 bg-transparent border border-zinc-700 group-hover:border-yellow-500 group-hover:bg-yellow-500 group-hover:text-black text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all duration-300"
+                      className="shrink-0 flex items-center gap-1.5 bg-transparent border border-zinc-300 dark:border-zinc-700 group-hover:border-yellow-500 group-hover:bg-yellow-500 group-hover:text-black text-zinc-950 dark:text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-lg transition-all duration-300"
                     >
                       Batafsil
                       <ArrowRight size={12} />
