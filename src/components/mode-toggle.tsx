@@ -7,6 +7,17 @@ import { useTheme } from "next-themes"
 
 export function ModeToggle() {
   const { setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <button className="relative p-2 rounded-full w-9 h-9 border border-zinc-200 dark:border-zinc-800 opacity-50 cursor-pointer-events-none" />
+    )
+  }
 
   return (
     <button
