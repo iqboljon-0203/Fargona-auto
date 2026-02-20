@@ -32,17 +32,17 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative min-h-[520px] flex items-center overflow-hidden bg-zinc-950">
+    <section id="contact" className="relative min-h-[520px] flex items-center overflow-hidden bg-zinc-100 dark:bg-zinc-950">
       {/* Background car image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop"
+          src="/cars/malibu-xl/DSCF5268.jpg"
           alt="Contact background"
           fill
           className="object-cover object-center"
         />
         {/* Dark overlay: right half lighter (for form), left darker */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-white/70 dark:from-black/70 dark:via-black/40 dark:to-black/60" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-20 flex justify-center">
@@ -51,9 +51,9 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="w-full max-w-xl bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl"
+          className="w-full max-w-xl bg-white/80 dark:bg-white/10 backdrop-blur-md border border-zinc-200 dark:border-white/20 rounded-2xl p-8 shadow-2xl"
         >
-          <h2 className="text-3xl font-bold text-white mb-7">Aloqa</h2>
+          <h2 className="text-3xl font-bold text-zinc-950 dark:text-white mb-7">Aloqa</h2>
 
           {sent ? (
             <div className="flex flex-col items-center justify-center h-48 gap-4">
@@ -69,7 +69,7 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               {/* Name */}
               <div>
-                <label className="block text-xs text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
+                <label className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
                   Ism
                 </label>
                 <input
@@ -78,17 +78,17 @@ export default function ContactSection() {
                   placeholder="Ismingiz"
                   value={form.name}
                   onChange={e => setForm({ ...form, name: e.target.value })}
-                  className="w-full bg-white/15 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-yellow-500 transition-colors"
+                  className="w-full bg-white dark:bg-white/15 border border-zinc-300 dark:border-white/20 rounded-lg px-4 py-3 text-zinc-950 dark:text-white placeholder-zinc-400 dark:placeholder-gray-400 text-sm focus:outline-none focus:border-yellow-500 transition-colors"
                 />
               </div>
 
               {/* Phone */}
               <div>
-                <label className="block text-xs text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
+                <label className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
                   Telefon raqami
                 </label>
-                <div className="flex items-center bg-white/15 border border-white/20 rounded-lg overflow-hidden focus-within:border-yellow-500 transition-colors">
-                  <span className="px-4 py-3 text-white font-medium text-sm border-r border-white/20 select-none whitespace-nowrap">+998</span>
+                <div className="flex items-center bg-white dark:bg-white/15 border border-zinc-300 dark:border-white/20 rounded-lg overflow-hidden focus-within:border-yellow-500 transition-colors">
+                  <span className="px-4 py-3 text-zinc-950 dark:text-white font-medium text-sm border-r border-zinc-300 dark:border-white/20 select-none whitespace-nowrap">+998</span>
                   <input
                     required
                     type="tel"
@@ -99,7 +99,7 @@ export default function ContactSection() {
                       setForm({ ...form, phone: val })
                     }}
                     maxLength={12}
-                    className="w-full bg-transparent px-3 py-3 text-white placeholder-gray-400 text-sm focus:outline-none"
+                    className="w-full bg-transparent px-3 py-3 text-zinc-950 dark:text-white placeholder-zinc-400 dark:placeholder-gray-400 text-sm focus:outline-none"
                   />
                 </div>
               </div>
@@ -108,17 +108,17 @@ export default function ContactSection() {
 
               {/* Model */}
               <div>
-                <label className="block text-xs text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
+                <label className="block text-xs text-zinc-600 dark:text-gray-300 mb-1.5 font-medium tracking-wide uppercase">
                   Model
                 </label>
                 <div className="relative">
                   <select
                     value={form.model}
                     onChange={e => setForm({ ...form, model: e.target.value })}
-                    className="w-full appearance-none bg-white/15 border border-white/20 rounded-lg px-4 py-3 text-yellow-400 text-sm focus:outline-none focus:border-yellow-500 transition-colors cursor-pointer"
+                    className="w-full appearance-none bg-white dark:bg-white/15 border border-zinc-300 dark:border-white/20 rounded-lg px-4 py-3 text-zinc-950 dark:text-yellow-400 text-sm focus:outline-none focus:border-yellow-500 transition-colors cursor-pointer"
                   >
                     {models.map(m => (
-                      <option key={m} value={m} className="bg-zinc-900 text-white">{m}</option>
+                      <option key={m} value={m} className="bg-white text-zinc-950 dark:bg-zinc-900 dark:text-white">{m}</option>
                     ))}
                   </select>
                   <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
@@ -133,9 +133,9 @@ export default function ContactSection() {
                 Yuborish
               </button>
 
-              <p className="text-center text-xs text-gray-400 mt-1">
+              <p className="text-center text-xs text-zinc-500 dark:text-gray-400 mt-1">
                 Yuborish tugmasini bosib, siz{' '}
-                <a href="#" className="underline hover:text-white transition-colors">
+                <a href="#" className="underline hover:text-zinc-950 dark:hover:text-white transition-colors">
                   shaxsiy ma&apos;lumotlarni qayta ishlash
                 </a>{' '}
                 ga rozilik bildirasiz.

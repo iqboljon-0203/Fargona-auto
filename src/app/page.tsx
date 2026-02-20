@@ -10,7 +10,7 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="bg-black min-h-screen text-white overflow-x-hidden selection:bg-yellow-500 selection:text-black">
+    <main className="bg-zinc-50 dark:bg-zinc-950 min-h-screen text-zinc-950 dark:text-white overflow-x-hidden selection:bg-yellow-500 selection:text-black">
       <Navbar />
       <Hero />
       <CarShowcase />
