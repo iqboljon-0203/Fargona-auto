@@ -57,7 +57,7 @@ export default function LocationSection() {
           {/* LEFT — Info panel */}
           <div className="lg:col-span-2 bg-zinc-950 flex flex-col justify-between p-8 gap-6">
             <div>
-              <p className="text-xs text-yellow-500 uppercase tracking-widest mb-2 font-semibold">Rasmiy diler</p>
+              <p className="text-xs text-yellow-500 uppercase tracking-widest mb-2 font-semibold">Rasmiy diller</p>
               <h3 className="text-xl font-bold text-white mb-6 leading-snug">
                 "FARG&apos;ONA AVTOTEXXIZMAT-F" MCHJ
               </h3>

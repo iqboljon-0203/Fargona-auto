@@ -22,12 +22,15 @@ export default function Navbar() {
   ]
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsMobileMenuOpen(false)
+    // If it's a page route (starts with /), let Next.js handle it
+    if (href.startsWith('/')) return
     e.preventDefault()
     const target = document.querySelector(href)
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
-    setIsMobileMenuOpen(false)
+
   }
 
   const toggleLanguage = () => {

@@ -27,7 +27,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-xs text-yellow-500 uppercase tracking-widest font-semibold mb-3">
-              Rasmiy Chevrolet Diler
+              Rasmiy Chevrolet diller
             </p>
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6 leading-tight">
               Biz <span className="text-yellow-500">haqimizda</span>
@@ -35,7 +35,7 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
               <p>
-                <strong className="text-white">&quot;Farg&apos;ona Avtotexxizmat-F&quot; MCHJ</strong> — Farg&apos;ona viloyatida Chevrolet brendining yagona rasmiy dileridir.
+                <strong className="text-white">&quot;Farg&apos;ona Avtotexxizmat-F&quot; MCHJ</strong> — Farg&apos;ona viloyatida Chevrolet brendining yagona rasmiy dilleridir.
                 Biz 2009 yildan beri faoliyat yuritib, mintaqada avtomobil sohasida ishonch va sifat ramzi sifatida tanilganmiz.
               </p>
               <p>
@@ -126,7 +126,7 @@ export default function AboutSection() {
                 </div>
                 {/* Badge */}
                 <div className="absolute top-4 right-4 bg-yellow-500 text-black text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-widest shadow-lg">
-                  Rasmiy Diler
+                  Rasmiy diller
                 </div>
               </div>
             </div>

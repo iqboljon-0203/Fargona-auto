@@ -17,9 +17,19 @@ import { Car, carsData } from '@/data/carsData'
 export default function CarDetailClient({ car }: { car: Car }) {
   const [activeImage, setActiveImage] = useState(0)
   const [activeColor, setActiveColor] = useState(0)
+  const [showColorImage, setShowColorImage] = useState(false)
 
-  const nextImage = () => setActiveImage(i => (i + 1) % car.images.length)
-  const prevImage = () => setActiveImage(i => (i - 1 + car.images.length) % car.images.length)
+  const currentColorImage = car.colors[activeColor]?.image
+
+  const nextImage = () => { setShowColorImage(false); setActiveImage(i => (i + 1) % car.images.length) }
+  const prevImage = () => { setShowColorImage(false); setActiveImage(i => (i - 1 + car.images.length) % car.images.length) }
+
+  const handleColorSelect = (i: number) => {
+    setActiveColor(i)
+    if (car.colors[i]?.image) {
+      setShowColorImage(true)
+    }
+  }
 
   const specItems = [
     { icon: Fuel,      label: 'Dvigatel',         value: car.specs.engine },
@@ -69,38 +79,62 @@ export default function CarDetailClient({ car }: { car: Car }) {
 
               {/* Main image */}
               <div className="relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[16/9]">
-                <Image
-                  key={activeImage}
-                  src={car.images[activeImage]}
-                  alt={car.name}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                {showColorImage && currentColorImage ? (
+                  <motion.div
+                    key={`color-${activeColor}`}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900"
+                  >
+                    <Image
+                      src={currentColorImage}
+                      alt={`${car.name} — ${car.colors[activeColor].name}`}
+                      fill
+                      className="object-contain p-4"
+                      priority
+                    />
+                    <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm rounded-lg px-3 py-1.5">
+                      <span className="text-xs text-gray-400">Rang: </span>
+                      <span className="text-sm font-semibold text-white">{car.colors[activeColor].name}</span>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <Image
+                    key={activeImage}
+                    src={car.images[activeImage]}
+                    alt={car.name}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
 
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-yellow-500 hover:text-black flex items-center justify-center transition-all"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-yellow-500 hover:text-black flex items-center justify-center transition-all z-10"
                 >
                   <ChevronLeft size={20} />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-yellow-500 hover:text-black flex items-center justify-center transition-all"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-yellow-500 hover:text-black flex items-center justify-center transition-all z-10"
                 >
                   <ChevronRight size={20} />
                 </button>
 
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {car.images.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveImage(i)}
-                      className={`transition-all rounded-full ${i === activeImage ? 'w-6 h-2 bg-yellow-500' : 'w-2 h-2 bg-white/40 hover:bg-white/70'}`}
-                    />
-                  ))}
-                </div>
+                {!showColorImage && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {car.images.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveImage(i)}
+                        className={`transition-all rounded-full ${i === activeImage ? 'w-6 h-2 bg-yellow-500' : 'w-2 h-2 bg-white/40 hover:bg-white/70'}`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Thumbnails */}
@@ -150,14 +184,18 @@ export default function CarDetailClient({ car }: { car: Car }) {
                   {car.colors.map((c, i) => (
                     <button
                       key={i}
-                      onClick={() => setActiveColor(i)}
+                      onClick={() => handleColorSelect(i)}
                       title={c.name}
                       style={{ backgroundColor: c.hex }}
-                      className={`w-8 h-8 rounded-full border-2 transition-all ${i === activeColor ? 'border-yellow-500 scale-110' : 'border-zinc-700 hover:border-zinc-400'}`}
+                      className={`w-8 h-8 rounded-full border-2 transition-all ${
+                        i === activeColor
+                          ? 'border-yellow-500 scale-110 ring-2 ring-yellow-500/30'
+                          : 'border-zinc-700 hover:border-zinc-400'
+                      }`}
                     />
                   ))}
                 </div>
-                <p className="text-xs text-gray-600 mt-2">* Rang mavjudligini dilerda tekshiring</p>
+                <p className="text-xs text-gray-600 mt-2">* Rang mavjudligini dillerda tekshiring</p>
               </div>
 
               {/* Safety */}
@@ -200,7 +238,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
       </section>
 
       {/* Specs */}
-      <section className="bg-zinc-900 border-y border-zinc-800 py-14">
+      <section id="specs" className="bg-zinc-900 border-y border-zinc-800 py-14">
         <div className="container mx-auto px-6">
           <h2 className="text-2xl font-bold uppercase tracking-tighter mb-8">
             Texnik <span className="text-yellow-500">Ko&apos;rsatkichlar</span>

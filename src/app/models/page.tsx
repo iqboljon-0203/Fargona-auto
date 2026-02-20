@@ -50,7 +50,7 @@ export default function ModelsPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <p className="text-xs text-yellow-500 uppercase tracking-[0.3em] font-semibold mb-2">
-                Rasmiy diler katalogi
+                Rasmiy diller katalogi
               </p>
               <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
                 Barcha <span className="text-yellow-500">Modellar</span>

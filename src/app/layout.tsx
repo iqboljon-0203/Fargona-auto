@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Rajdhani } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import FloatingContact from "@/components/FloatingContact";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -44,6 +45,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <FloatingContact />
         </ThemeProvider>
       </body>
     </html>
