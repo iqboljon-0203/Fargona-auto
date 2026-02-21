@@ -83,6 +83,7 @@ export default function Hero() {
               fill
               className="object-cover"
               priority={page === 0}
+              loading="eager"
               sizes="100vw"
               quality={85}
               fetchPriority={page === 0 ? "high" : "auto"}

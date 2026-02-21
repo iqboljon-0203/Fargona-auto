@@ -10,15 +10,18 @@ import {
   Loader2
 } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import { parseLocalizedField } from '@/lib/i18n-utils'
 
 export default function AdminAboutPage() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
+  const [activeLang, setActiveLang] = useState('uz')
+  
   const [aboutData, setAboutData] = useState({
     id: null,
-    title: 'Biz Haqimizda',
-    subtitle: 'Rasmiy Chevrolet Diller',
-    description: '',
+    title: { uz: 'Biz Haqimizda', ru: 'О нас', en: 'About Us' },
+    subtitle: { uz: 'Rasmiy Chevrolet Diller', ru: 'Официальный Дилер Chevrolet', en: 'Official Chevrolet Dealer' },
+    description: { uz: '', ru: '', en: '' },
     experience_years: '15+',
     happy_customers: '5 000+',
     service_done: '8 000+',
@@ -41,7 +44,12 @@ export default function AdminAboutPage() {
         .maybeSingle()
       
       if (data) {
-        setAboutData(data)
+        setAboutData({
+          ...data,
+          title: parseLocalizedField(data.title),
+          subtitle: parseLocalizedField(data.subtitle),
+          description: parseLocalizedField(data.description)
+        })
       } else if (error) {
         console.error('Error fetching about:', error)
       }
@@ -88,20 +96,25 @@ export default function AdminAboutPage() {
     setSaving(true)
     try {
       const { id, ...dataToSave } = aboutData
+      
+      const payload = {
+        ...dataToSave,
+        title: JSON.stringify(aboutData.title),
+        subtitle: JSON.stringify(aboutData.subtitle),
+        description: JSON.stringify(aboutData.description)
+      }
 
       let result;
       
       if (id) {
-        // Agar ID bo'lsa - yangilaymiz
         result = await supabase
           .from('about')
-          .update(dataToSave)
+          .update(payload)
           .eq('id', id)
       } else {
-        // Agar ID bo'lmasa - yangi qo'shamiz
         result = await supabase
           .from('about')
-          .insert([dataToSave])
+          .insert([payload])
       }
 
       if (!result.error) {
@@ -127,26 +140,39 @@ export default function AdminAboutPage() {
 
   return (
     <div className="space-y-8 text-white max-w-6xl mx-auto pb-20">
-      <div className="flex justify-between items-end">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
         <div>
           <h1 className="text-3xl font-black uppercase tracking-tighter">Sahifa <span className="text-yellow-500">Sozlamalari</span></h1>
           <p className="text-zinc-500 text-sm mt-1">"Biz haqimizda" bo'limi tarkibini boshqaring</p>
         </div>
-        <button 
-          onClick={handleSave}
-          disabled={saving}
-          className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase text-xs px-8 py-4 rounded-2xl transition-all shadow-lg shadow-yellow-500/10 disabled:opacity-50"
-        >
-          {saving ? <Loader2 className="animate-spin" size={18} /> : <Save size={18} />}
-          Saqlash
-        </button>
+        <div className="flex items-center gap-4">
+          <div className="flex bg-zinc-900 border border-zinc-800 rounded-xl p-1 shadow-lg shrink-0">
+            {(['uz', 'ru', 'en'] as const).map(l => (
+              <button 
+                key={l} 
+                onClick={() => setActiveLang(l)} 
+                className={`px-4 py-2 text-xs font-bold uppercase rounded-lg transition-all ${activeLang === l ? 'bg-yellow-500 text-black' : 'text-zinc-400 hover:text-white hover:bg-zinc-800'}`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+          <button 
+            onClick={handleSave}
+            disabled={saving}
+            className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-black font-black uppercase text-xs px-8 py-4 rounded-xl transition-all shadow-lg shadow-yellow-500/10 disabled:opacity-50"
+          >
+            {saving ? <Loader2 className="animate-spin" size={18} /> : <Save size={18} />}
+            Saqlash
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="space-y-6 bg-zinc-900 border border-zinc-800 rounded-3xl p-8 shadow-2xl">
           <h3 className="text-lg font-bold uppercase tracking-tight flex items-center gap-3">
             <Users className="text-yellow-500" size={20} />
-            Matnlar va Ma'lumotlar
+            Matnlar va Ma'lumotlar ({activeLang.toUpperCase()})
           </h3>
           
           <div className="space-y-4">
@@ -155,8 +181,8 @@ export default function AdminAboutPage() {
                 <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Kichik Sarlavha</label>
                 <input 
                   type="text" 
-                  value={aboutData.subtitle}
-                  onChange={e => setAboutData({...aboutData, subtitle: e.target.value})}
+                  value={aboutData.subtitle[activeLang as keyof typeof aboutData.subtitle] || ''}
+                  onChange={e => setAboutData({...aboutData, subtitle: {...aboutData.subtitle, [activeLang]: e.target.value}})}
                   className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl py-3 px-4 text-sm focus:border-yellow-500 transition-all outline-none" 
                 />
               </div>
@@ -164,8 +190,8 @@ export default function AdminAboutPage() {
                 <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Asosiy Sarlavha</label>
                 <input 
                   type="text" 
-                  value={aboutData.title}
-                  onChange={e => setAboutData({...aboutData, title: e.target.value})}
+                  value={aboutData.title[activeLang as keyof typeof aboutData.title] || ''}
+                  onChange={e => setAboutData({...aboutData, title: {...aboutData.title, [activeLang]: e.target.value}})}
                   className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl py-3 px-4 text-sm focus:border-yellow-500 transition-all outline-none" 
                 />
               </div>
@@ -175,8 +201,8 @@ export default function AdminAboutPage() {
               <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Tavsif (Asosiy matn)</label>
               <textarea 
                 rows={8}
-                value={aboutData.description}
-                onChange={e => setAboutData({...aboutData, description: e.target.value})}
+                value={aboutData.description[activeLang as keyof typeof aboutData.description] || ''}
+                onChange={e => setAboutData({...aboutData, description: {...aboutData.description, [activeLang]: e.target.value}})}
                 className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl py-3 px-4 text-sm focus:border-yellow-500 transition-all outline-none resize-none leading-relaxed" 
               />
             </div>
@@ -260,7 +286,7 @@ export default function AdminAboutPage() {
             <div className="flex gap-3">
               <Zap className="text-yellow-500 shrink-0" size={18} />
               <p className="text-[10px] text-zinc-400 leading-relaxed uppercase tracking-wider">
-                Ma'lumotlarni saqlashdan oldin rasmlar to'g'ri yuklanganligiga ishonch hosil qiling. O'zgarishlar saytda darhol aks etadi.
+                Ma'lumotlarni saqlashdan oldin rasmlar to'g'ri yuklanganligiga ishonch hosil qiling. O'zgarishlar saytda har bir til uchun alohida aks etadi.
               </p>
             </div>
           </div>

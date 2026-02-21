@@ -24,15 +24,65 @@ const rajdhani = Rajdhani({
   weight: ["600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Farg'ona Chevrolet - Rasmiy Diller",
-  description: "Chevrolet avtomobillari Farg'ona viloyatida rasmiy dilleri.",
-  icons: {
-    icon: '/chevrolet.svg',
-    shortcut: '/chevrolet.svg',
-    apple: '/chevrolet.svg',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const lang = resolvedParams.lang || 'uz';
+
+  const titles: Record<string, string> = {
+    uz: "Farg'ona Chevrolet - Rasmiy Diller",
+    ru: "Farg'ona Chevrolet - Официальный дилер",
+    en: "Farg'ona Chevrolet - Official Dealer"
+  };
+
+  const descriptions: Record<string, string> = {
+    uz: "Chevrolet avtomobillari: Onix, Tracker, Cobalt va boshqalar. Farg'ona viloyatida yagona rasmiy diller. Muddatli to'lov.",
+    ru: "Автомобили Chevrolet в Фергане: Onix, Tracker, Cobalt. Официальный дилер, рассрочка, гарантия.",
+    en: "Chevrolet vehicles in Fergana: Onix, Tracker, Cobalt. Official dealer, installments, warranty."
+  };
+
+  const siteUrl = "https://fargona-chevrolet.uz"; // Update explicitly if needed
+
+  return {
+    title: titles[lang] || titles.uz,
+    description: descriptions[lang] || descriptions.uz,
+    metadataBase: new URL(siteUrl),
+    icons: {
+      icon: '/chevrolet.svg',
+      shortcut: '/chevrolet.svg',
+      apple: '/chevrolet.svg',
+    },
+    openGraph: {
+      title: titles[lang] || titles.uz,
+      description: descriptions[lang] || descriptions.uz,
+      url: `${siteUrl}/${lang}`,
+      siteName: "Farg'ona Chevrolet",
+      images: [
+        {
+          url: "/cars/tahoe-rst/car-gallery.webp",
+          width: 1200,
+          height: 630,
+          alt: titles[lang] || titles.uz,
+        }
+      ],
+      locale: lang,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: titles[lang] || titles.uz,
+      description: descriptions[lang] || descriptions.uz,
+      images: ['/cars/tahoe-rst/car-gallery.webp'],
+    },
+    alternates: {
+      canonical: `${siteUrl}/${lang}`,
+      languages: {
+        'uz-UZ': `${siteUrl}/uz`,
+        'ru-RU': `${siteUrl}/ru`,
+        'en-US': `${siteUrl}/en`,
+      },
+    },
+  };
+}
 
 export function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))

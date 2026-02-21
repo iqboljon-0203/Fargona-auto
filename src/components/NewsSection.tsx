@@ -9,8 +9,12 @@ import { ArrowRight, Calendar, Loader2 } from 'lucide-react'
 import { newsData } from '@/data/newsData'
 import { useDictionary } from '@/components/DictionaryProvider'
 import { supabase } from '@/lib/supabase'
+import { getLocalizedText } from '@/lib/i18n-utils'
+import { useParams } from 'next/navigation'
 
 export default function NewsSection() {
+  const { lang } = useParams() as { lang: string }
+  const currentLang = lang || 'uz'
   const [dbNews, setDbNews] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const dict = useDictionary() as any
@@ -55,7 +59,8 @@ export default function NewsSection() {
   const displayNews = dbNews.length > 0 ? dbNews : newsData
   const [featured, ...rest] = displayNews
 
-  const getCategoryColor = (category: string) => {
+  const getCategoryColor = (categoryRaw: any) => {
+    const category = getLocalizedText(categoryRaw, 'uz');
     switch (category) {
       case 'Aksiya': return 'bg-red-500 text-white'
       case 'Yangi model': return 'bg-blue-500 text-white'
@@ -104,14 +109,14 @@ export default function NewsSection() {
                 <div className="relative h-72 md:h-96 w-full overflow-hidden flex-shrink-0">
                   <NewsImage
                     src={featured.image}
-                    alt={featured.title}
+                    alt={getLocalizedText(featured.title, currentLang)}
                     fill
                     sizes="(max-width: 768px) 100vw, 60vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 via-transparent to-transparent dark:from-zinc-950" />
                   <span className={`absolute top-6 left-6 text-[10px] font-bold uppercase px-4 py-2 rounded-full tracking-widest shadow-lg ${getCategoryColor(featured.category)}`}>
-                    {featured.category}
+                    {getLocalizedText(featured.category, currentLang)}
                   </span>
                 </div>
                 <div className="p-8 flex flex-col flex-1">
@@ -120,10 +125,10 @@ export default function NewsSection() {
                     {formatDate(featured.created_at || featured.date)}
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-zinc-950 dark:text-white mb-4 group-hover:text-yellow-500 transition-colors leading-tight tracking-tight uppercase">
-                    {featured.title}
+                    {getLocalizedText(featured.title, currentLang)}
                   </h3>
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed flex-1 line-clamp-2">
-                    {featured.excerpt}
+                    {getLocalizedText(featured.excerpt, currentLang)}
                   </p>
                   <div className="flex items-center gap-2 mt-8 text-yellow-500 text-xs font-bold uppercase tracking-widest group/btn">
                     {t?.read_more || "Batafsil O'qish"} 
@@ -148,7 +153,7 @@ export default function NewsSection() {
                   <div className="relative w-32 md:w-44 shrink-0 overflow-hidden">
                     <NewsImage
                       src={item.image}
-                      alt={item.title}
+                      alt={getLocalizedText(item.title, currentLang)}
                       fill
                       sizes="200px"
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -159,13 +164,13 @@ export default function NewsSection() {
                   <div className="p-6 flex flex-col justify-between flex-1 min-w-0">
                     <div>
                       <span className={`text-[9px] font-bold uppercase px-3 py-1 rounded-full tracking-widest inline-block mb-3 shadow-sm ${getCategoryColor(item.category)}`}>
-                        {item.category}
+                        {getLocalizedText(item.category, currentLang)}
                       </span>
                       <h4 className="text-base font-bold text-zinc-950 dark:text-white group-hover:text-yellow-500 transition-colors leading-tight line-clamp-2 uppercase">
-                        {item.title}
+                        {getLocalizedText(item.title, currentLang)}
                       </h4>
                       <p className="text-[11px] text-zinc-500 dark:text-zinc-400 mt-2 line-clamp-1 leading-relaxed">
-                        {item.excerpt}
+                        {getLocalizedText(item.excerpt, currentLang)}
                       </p>
                     </div>
                     <div className="flex items-center justify-between mt-4">

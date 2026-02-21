@@ -118,6 +118,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
                       src={currentColorImage}
                       alt={`${car.name} — ${car.colors[activeColor].name}`}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 60vw"
                       className="object-contain p-4"
                       priority
                     />
@@ -132,6 +133,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
                     src={car.images[activeImage]}
                     alt={car.name}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
                     className="object-cover"
                     priority
                   />
@@ -176,7 +178,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
                     aria-label={`${i + 1}-${t.select_image}`}
                     className={`relative flex-1 aspect-video rounded-xl overflow-hidden border-2 transition-all ${i === activeImage ? 'border-yellow-500' : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600'}`}
                   >
-                    <Image src={img} alt={`${car.name} ${t.image} ${i + 1}`} fill className="object-cover" />
+                    <Image src={img} alt={`${car.name} ${t.image} ${i + 1}`} fill sizes="(max-width: 1024px) 33vw, 20vw" className="object-cover" />
                   </button>
                 ))}
               </div>
@@ -359,6 +361,7 @@ export default function CarDetailClient({ car }: { car: Car }) {
                       src={c.images[0]}
                       alt={otherCarName}
                       fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-50 dark:from-zinc-950 to-transparent" />

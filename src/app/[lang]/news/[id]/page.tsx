@@ -8,6 +8,7 @@ import { newsData } from '@/data/newsData'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { supabase } from '@/lib/supabase'
+import { getLocalizedText } from '@/lib/i18n-utils'
 
 import { getDictionary } from '@/get-dictionary'
 import { Locale } from '@/i18n-config'
@@ -41,7 +42,8 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ id:
     notFound()
   }
 
-  const getCategoryColor = (category: string) => {
+  const getCategoryColor = (categoryRaw: any) => {
+    const category = getLocalizedText(categoryRaw, 'uz');
     switch (category) {
       case 'Aksiya': return 'bg-red-500 text-white'
       case 'Yangi model': return 'bg-blue-500 text-white'
@@ -51,9 +53,13 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ id:
   }
 
   // Formatting for display
-  const title = newsItem.title
-  const content = newsItem.content || `<p>${newsItem.excerpt}</p>`
-  const category = newsItem.category
+  const title = getLocalizedText(newsItem.title, lang)
+  let content = getLocalizedText(newsItem.content, lang)
+  if (!content) {
+    content = `<p>${getLocalizedText(newsItem.excerpt, lang)}</p>`
+  }
+  const category = getLocalizedText(newsItem.category, lang)
+  const categoryRaw = newsItem.category
   const image = newsItem.image
   let dateStr = newsItem.date
   if (newsItem.created_at) {
@@ -78,7 +84,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ id:
           
           <header className="mb-8">
             <div className="flex flex-wrap items-center gap-4 mb-6 text-xs font-bold uppercase tracking-widest">
-              <span className={`px-4 py-1.5 rounded-full shadow-sm ${getCategoryColor(category)}`}>
+              <span className={`px-4 py-1.5 rounded-full shadow-sm ${getCategoryColor(categoryRaw)}`}>
                 {category}
               </span>
               <div className="flex items-center gap-2 text-zinc-500 dark:text-gray-400">

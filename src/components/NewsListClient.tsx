@@ -6,6 +6,8 @@ import NewsImage from '@/components/NewsImage'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calendar } from 'lucide-react'
 import LangLink from '@/components/LangLink'
+import { getLocalizedText } from '@/lib/i18n-utils'
+import { useParams } from 'next/navigation'
 
 interface NewsListClientProps {
   news: any[]
@@ -14,7 +16,11 @@ interface NewsListClientProps {
 }
 
 export default function NewsListClient({ news, dict, t }: NewsListClientProps) {
-  const getCategoryColor = (category: string) => {
+  const { lang } = useParams() as { lang: string }
+  const currentLang = lang || 'uz'
+
+  const getCategoryColor = (categoryRaw: any) => {
+    const category = getLocalizedText(categoryRaw, 'uz')
     switch (category) {
       case 'Aksiya': return 'bg-red-500 text-white'
       case 'Yangi model': return 'bg-blue-500 text-white'
@@ -40,12 +46,13 @@ export default function NewsListClient({ news, dict, t }: NewsListClientProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {news.map((item, i) => {
-        // Handle translations if available in dictionary
+        // Handle translations if available in dictionary, otherwise use DB fields
         const itemDict = dict.news_items?.[item.slug] || {}
-        const itemTitle = itemDict.title || item.title
-        const itemExcerpt = itemDict.excerpt || item.excerpt
-        // Category translation if exists
-        const itemCategory = dict.news_items?.categories?.[item.category] || item.category
+        const itemTitle = itemDict.title || getLocalizedText(item.title, currentLang)
+        const itemExcerpt = itemDict.excerpt || getLocalizedText(item.excerpt, currentLang)
+        
+        // Category translation
+        const itemCategory = getLocalizedText(item.category, currentLang)
 
         return (
           <LangLink href={`/news/${item.slug}`} key={item.id} className="block h-full group">

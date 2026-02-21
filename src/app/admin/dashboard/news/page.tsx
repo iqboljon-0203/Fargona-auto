@@ -15,6 +15,7 @@ import {
   Newspaper as NewspaperIcon
 } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import { parseLocalizedField, getLocalizedText } from '@/lib/i18n-utils'
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
@@ -31,7 +32,14 @@ function AdminNewsContent() {
   const [uploading, setUploading] = useState(false)
   const [file, setFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string | null>(null)
-  const [formData, setFormData] = useState({ title: '', excerpt: '', content: '', category: 'Yangilik', image: '' })
+  const [activeLang, setActiveLang] = useState('uz')
+  const [formData, setFormData] = useState({ 
+    title: {uz:'', ru:'', en:''}, 
+    excerpt: {uz:'', ru:'', en:''}, 
+    content: {uz:'', ru:'', en:''}, 
+    category: {uz:'Yangilik', ru:'Новость', en:'News'}, 
+    image: '' 
+  })
   const [searchQuery, setSearchQuery] = useState(defaultSearch)
 
   useEffect(() => {
@@ -160,7 +168,8 @@ function AdminNewsContent() {
       }
 
       // Improved slug generation
-      const slug = formData.title
+      const baseTitle = typeof formData.title === 'string' ? formData.title : (formData.title as any).uz || (formData.title as any).ru || 'post';
+      const slug = baseTitle
         .toLowerCase()
         .trim()
         .replace(/o'/g, 'o')
@@ -172,10 +181,19 @@ function AdminNewsContent() {
         .replace(/[\s-]+/g, '-')
         .replace(/^-+|-+$/g, '')
       
+      const payload = {
+        title: JSON.stringify(formData.title),
+        excerpt: JSON.stringify(formData.excerpt),
+        content: JSON.stringify(formData.content),
+        category: JSON.stringify(formData.category),
+        image: imageUrl,
+        slug
+      }
+      
       if (editId) {
         const { error } = await supabase
           .from('news')
-          .update({ ...formData, image: imageUrl, slug })
+          .update(payload)
           .eq('id', editId)
 
         if (!error) {
@@ -184,9 +202,7 @@ function AdminNewsContent() {
           fetchNews()
         } else throw error
       } else {
-        const { error } = await supabase.from('news').insert([
-          { ...formData, image: imageUrl, slug }
-        ])
+        const { error } = await supabase.from('news').insert([payload])
 
         if (!error) {
           alert('Yangilik muvaffaqiyatli qo\'shildi!')
@@ -207,7 +223,13 @@ function AdminNewsContent() {
     setEditId(null)
     setFile(null)
     setImagePreview(null)
-    setFormData({ title: '', excerpt: '', content: '', category: 'Yangilik', image: '' })
+    setFormData({ 
+      title: {uz:'', ru:'', en:''}, 
+      excerpt: {uz:'', ru:'', en:''}, 
+      content: {uz:'', ru:'', en:''}, 
+      category: {uz:'Yangilik', ru:'Новость', en:'News'}, 
+      image: '' 
+    })
   }
 
   const scrollToForm = () => {
@@ -227,10 +249,10 @@ function AdminNewsContent() {
 
   const handleEdit = (item: any) => {
     setFormData({
-      title: item.title,
-      excerpt: item.excerpt || '',
-      content: item.content || '',
-      category: item.category || 'Yangilik',
+      title: parseLocalizedField(item.title),
+      excerpt: parseLocalizedField(item.excerpt),
+      content: parseLocalizedField(item.content),
+      category: parseLocalizedField(item.category),
       image: item.image || ''
     })
     setImagePreview(item.image || null)
@@ -310,11 +332,11 @@ function AdminNewsContent() {
                     {filteredNews.map((item) => (
                       <tr key={item.id} className="group hover:bg-zinc-800/30 transition-colors">
                         <td className="px-6 py-5">
-                          <p className="text-sm font-bold text-white line-clamp-1 group-hover:text-yellow-500 transition-colors">{item.title}</p>
+                          <p className="text-sm font-bold text-white line-clamp-1 group-hover:text-yellow-500 transition-colors">{getLocalizedText(item.title, 'uz')}</p>
                         </td>
                         <td className="px-6 py-5">
                           <span className="text-[10px] font-bold uppercase tracking-widest bg-zinc-800 px-2 py-1 rounded-full text-zinc-400">
-                            {item.category}
+                            {getLocalizedText(item.category, 'uz')}
                           </span>
                         </td>
                         <td className="px-6 py-5 text-xs text-zinc-500">
@@ -356,7 +378,7 @@ function AdminNewsContent() {
               animate={{ opacity: 1, x: 0 }}
               className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sticky top-6"
             >
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold uppercase tracking-tighter">
                   {editId ? 'Yangilikni Tahrirlash' : 'Yangi Yangilik'}
                 </h3>
@@ -365,31 +387,36 @@ function AdminNewsContent() {
                 </button>
               </div>
 
+              <div className="flex border border-zinc-800 rounded-xl overflow-hidden shadow-lg p-1 bg-zinc-900 w-fit mb-6">
+                {(['uz', 'ru', 'en'] as const).map(l => (
+                  <button type="button" key={l} onClick={() => setActiveLang(l)} className={`px-4 py-2 text-xs font-bold uppercase rounded-lg transition-all ${activeLang === l ? 'bg-yellow-500 text-black' : 'text-zinc-400 hover:text-white hover:bg-zinc-800'}`}>{l}</button>
+                ))}
+              </div>
+
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Mavzu</label>
                   <input 
-                    required
+                    required={activeLang === 'uz'}
                     type="text" 
-                    placeholder="Yangilik sarlavhasi"
-                    value={formData.title}
-                    onChange={e => setFormData({...formData, title: e.target.value})}
+                    placeholder={`Yangilik sarlavhasi (${activeLang.toUpperCase()})`}
+                    value={(formData.title as any)[activeLang] || ''}
+                    onChange={e => setFormData({...formData, title: {...formData.title, [activeLang]: e.target.value}})}
                     className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 transition-all text-white"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Kategoriya</label>
-                  <select 
-                    value={formData.category}
-                    onChange={e => setFormData({...formData, category: e.target.value})}
-                    className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 transition-all appearance-none cursor-pointer text-white"
-                  >
-                    <option value="Yangilik" className="bg-zinc-900">Yangilik</option>
-                    <option value="Yangi model" className="bg-zinc-900">Yangi model</option>
-                    <option value="Aksiya" className="bg-zinc-900">Aksiya</option>
-                    <option value="Xizmat" className="bg-zinc-900">Xizmat</option>
-                  </select>
+                  <input 
+                    required={activeLang === 'uz'}
+                    type="text" 
+                    placeholder={`Kategoriya rasmiy nomi (${activeLang.toUpperCase()})`}
+                    value={(formData.category as any)[activeLang] || ''}
+                    onChange={e => setFormData({...formData, category: {...formData.category, [activeLang]: e.target.value}})}
+                    className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 transition-all text-white"
+                  />
+                  <p className="text-[10px] text-zinc-500 ml-1 italic">* "Yangilik", "Yangi model", "Aksiya" yoki "Xizmat" kabi yoza olasiz</p>
                 </div>
 
                 <div className="space-y-2">
@@ -423,9 +450,9 @@ function AdminNewsContent() {
                   <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">Qisqacha mazmun</label>
                   <textarea 
                     rows={2}
-                    placeholder="Yangilik haqida qisqacha..."
-                    value={formData.excerpt}
-                    onChange={e => setFormData({...formData, excerpt: e.target.value})}
+                    placeholder={`Yangilik haqida qisqacha... (${activeLang.toUpperCase()})`}
+                    value={(formData.excerpt as any)[activeLang] || ''}
+                    onChange={e => setFormData({...formData, excerpt: {...formData.excerpt, [activeLang]: e.target.value}})}
                     className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 transition-all resize-none text-white placeholder:text-zinc-600"
                   />
                 </div>
@@ -433,11 +460,11 @@ function AdminNewsContent() {
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 ml-1">To'liq matn</label>
                   <textarea 
-                    required
+                    required={activeLang === 'uz'}
                     rows={6}
-                    placeholder="Yangilikning to'liq tafsilotlari..."
-                    value={formData.content}
-                    onChange={e => setFormData({...formData, content: e.target.value})}
+                    placeholder={`Yangilikning to'liq tafsilotlari... (${activeLang.toUpperCase()})`}
+                    value={(formData.content as any)[activeLang] || ''}
+                    onChange={e => setFormData({...formData, content: {...formData.content, [activeLang]: e.target.value}})}
                     className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-yellow-500 transition-all resize-none text-white placeholder:text-zinc-600"
                   />
                 </div>

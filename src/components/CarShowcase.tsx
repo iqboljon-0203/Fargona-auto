@@ -41,6 +41,7 @@ function CarSlider({ images, labels }: { images: string[], labels: { prev: strin
             src={images[current]}
             alt={`${labels.image} ${current + 1}`}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />

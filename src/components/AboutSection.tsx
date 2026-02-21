@@ -7,8 +7,12 @@ import { motion } from 'framer-motion'
 import { Award, Users, Wrench, ShieldCheck } from 'lucide-react'
 import { useDictionary } from '@/components/DictionaryProvider'
 import { supabase } from '@/lib/supabase'
+import { getLocalizedText } from '@/lib/i18n-utils'
+import { useParams } from 'next/navigation'
 
 export default function AboutSection() {
+  const { lang } = useParams() as { lang: string }
+  const currentLang = lang || 'uz'
   const [dbData, setDbData] = useState<any>(null)
   const dict = useDictionary() as {
     about: {
@@ -68,15 +72,15 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-xs text-yellow-500 uppercase tracking-widest font-semibold mb-3">
-              {dbData?.subtitle || t.label}
+              {dbData?.subtitle ? getLocalizedText(dbData.subtitle, currentLang) : t.label}
             </p>
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6 leading-tight">
-              {dbData?.title || t.title_1} <span className="text-yellow-500">{!dbData && t.title_2}</span>
+              {dbData?.title ? getLocalizedText(dbData.title, currentLang) : t.title_1} <span className="text-yellow-500">{!dbData && t.title_2}</span>
             </h2>
 
             <div className="space-y-4 text-zinc-600 dark:text-gray-400 text-sm leading-relaxed whitespace-pre-line">
               {dbData?.description ? (
-                <p>{dbData.description}</p>
+                <p>{getLocalizedText(dbData.description, currentLang)}</p>
               ) : (
                 <>
                   <p>{t.p1}</p>
@@ -119,6 +123,7 @@ export default function AboutSection() {
                 src={images.main}
                 alt="Chevrolet showroom"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -135,6 +140,7 @@ export default function AboutSection() {
                   src={images.tahoe}
                   alt="Chevrolet Tahoe"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -148,6 +154,7 @@ export default function AboutSection() {
                   src={images.traverse}
                   alt="Chevrolet Traverse"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -156,7 +163,7 @@ export default function AboutSection() {
                   <span className="text-xs text-yellow-500 uppercase tracking-widest font-semibold">Traverse</span>
                 </div>
                 <div className="absolute top-4 right-4 bg-yellow-500 text-black text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-widest shadow-lg">
-                  {dbData?.subtitle || t.label}
+                  {dbData?.subtitle ? getLocalizedText(dbData.subtitle, currentLang) : t.label}
                 </div>
               </div>
             </div>
