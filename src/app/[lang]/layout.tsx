@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     en: "Chevrolet vehicles in Fergana: Onix, Tracker, Cobalt. Official dealer, installments, warranty."
   };
 
-  const siteUrl = "https://fargona-chevrolet.uz"; // Update explicitly if needed
+  const siteUrl = "https://fargona-auto.vercel.app"; // Matches the Vercel deployment URL
 
   return {
     title: titles[lang] || titles.uz,
