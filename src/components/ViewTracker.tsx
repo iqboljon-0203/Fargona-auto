@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { supabase } from '@/lib/supabase'
+
 
 export default function ViewTracker() {
   useEffect(() => {
@@ -10,8 +10,8 @@ export default function ViewTracker() {
     if (!tracked) {
       const incrementView = async () => {
         try {
-          // SQL funksiyani chaqiramiz
-          await supabase.rpc('increment_page_view')
+          // API endpointni chaqiramiz
+          await fetch('/api/track', { method: 'POST' })
           sessionStorage.setItem('page_view_tracked', 'true')
         } catch (error) {
           // Xatolik bo'lsa indamaymiz

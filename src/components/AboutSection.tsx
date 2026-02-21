@@ -6,14 +6,13 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Award, Users, Wrench, ShieldCheck } from 'lucide-react'
 import { useDictionary } from '@/components/DictionaryProvider'
-import { supabase } from '@/lib/supabase'
 import { getLocalizedText } from '@/lib/i18n-utils'
 import { useParams } from 'next/navigation'
 
-export default function AboutSection() {
+export default function AboutSection({ initialData }: { initialData?: any }) {
   const { lang } = useParams() as { lang: string }
   const currentLang = lang || 'uz'
-  const [dbData, setDbData] = useState<any>(null)
+  const dbData = initialData
   const dict = useDictionary() as {
     about: {
       label: string
@@ -31,16 +30,7 @@ export default function AboutSection() {
     }
   }
 
-  useEffect(() => {
-    const fetchAbout = async () => {
-      const { data } = await supabase
-        .from('about')
-        .select('*')
-        .single()
-      if (data) setDbData(data)
-    }
-    fetchAbout()
-  }, [])
+
 
   const t = dict.about
 

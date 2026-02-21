@@ -8,31 +8,15 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Calendar, Loader2 } from 'lucide-react'
 import { newsData } from '@/data/newsData'
 import { useDictionary } from '@/components/DictionaryProvider'
-import { supabase } from '@/lib/supabase'
 import { getLocalizedText } from '@/lib/i18n-utils'
 import { useParams } from 'next/navigation'
 
-export default function NewsSection() {
+export default function NewsSection({ initialNews = [] }: { initialNews?: any[] }) {
   const { lang } = useParams() as { lang: string }
   const currentLang = lang || 'uz'
-  const [dbNews, setDbNews] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
+  const dbNews = initialNews
   const dict = useDictionary() as any
   const t = dict.news
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const { data } = await supabase
-        .from('news')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .limit(4)
-      
-      if (data && data.length > 0) setDbNews(data)
-      setLoading(false)
-    }
-    fetchNews()
-  }, [])
 
   // Date formatter helper
   const formatDate = (dateStr: string) => {
@@ -69,7 +53,7 @@ export default function NewsSection() {
     }
   }
 
-  if (loading) return null
+
 
   return (
     <section id="news" className="bg-zinc-50 dark:bg-zinc-950 py-24 text-zinc-950 dark:text-white overflow-hidden">
