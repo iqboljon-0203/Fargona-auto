@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/api/'],
     },
-    sitemap: 'https://fargona-auto.vercel.app/sitemap.xml',
+    sitemap: 'https://www.ferganaatx.uz/sitemap.xml',
   }
 }
