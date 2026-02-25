@@ -16,6 +16,7 @@
     "about": "About Us",
     "news": "News",
     "models": "Models",
+    "reports": "Company Reports",
     "contact": "Contact",
     "location": "Location"
   },
@@ -89,6 +90,20 @@
     "page_title_1": "News",
     "page_title_2": " Archive",
     "back": "Go back"
+  },
+  "reports_page": {
+    "page_label": "Documents and Reports",
+    "page_title_1": "Company",
+    "page_title_2": " Reports",
+    "back": "Go back",
+    "download": "Download",
+    "empty": "No reports available yet"
+  },
+  "reports": {
+    "label": "Company Reports",
+    "title_1": "Company",
+    "title_2": " Reports",
+    "all": "View All"
   },
   "contact": {
     "title": "Contact",

@@ -35,6 +35,7 @@ export default function Navbar() {
     { name: t.models, href: '#models' },
     { name: t.about, href: '#about' },
     { name: t.news, href: '#news' },
+    { name: t.reports, href: `/${currentLang}/reports` },
     { name: t.contact, href: '#contact' },
     { name: t.location, href: '#dealers' },
   ]

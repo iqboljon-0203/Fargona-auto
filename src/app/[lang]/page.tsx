@@ -7,14 +7,16 @@ import { supabase } from '@/lib/supabase'
 const CarShowcase = dynamic(() => import('@/components/CarShowcase'))
 const AboutSection = dynamic(() => import('@/components/AboutSection'))
 const NewsSection = dynamic(() => import('@/components/NewsSection'))
+const ReportsSection = dynamic(() => import('@/components/ReportsSection'))
 const ContactSection = dynamic(() => import('@/components/ContactSection'))
 const LocationSection = dynamic(() => import('@/components/LocationSection'))
 const Footer = dynamic(() => import('@/components/Footer'))
 
 export default async function Home() {
-  const [aboutDataRes, newsDataRes] = await Promise.all([
+  const [aboutDataRes, newsDataRes, reportsDataRes] = await Promise.all([
     supabase.from('about').select('*').single(),
-    supabase.from('news').select('*').order('created_at', { ascending: false }).limit(4)
+    supabase.from('news').select('*').order('created_at', { ascending: false }).limit(4),
+    supabase.from('reports').select('*').order('created_at', { ascending: false }).limit(3)
   ])
 
   return (
@@ -24,6 +26,7 @@ export default async function Home() {
       <CarShowcase />
       <AboutSection initialData={aboutDataRes.data} />
       <NewsSection initialNews={newsDataRes.data || []} />
+      <ReportsSection initialReports={reportsDataRes.data || []} />
       <ContactSection />
       <LocationSection />
       <Footer />

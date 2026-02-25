@@ -16,6 +16,7 @@
     "about": "Biz haqimizda",
     "news": "Yangiliklar",
     "models": "Modellar",
+    "reports": "Jamiyat hisobotlari",
     "contact": "Aloqa",
     "location": "Manzil"
   },
@@ -89,6 +90,20 @@
     "page_title_1": "Yangiliklar",
     "page_title_2": " Arxivi",
     "back": "Ortga qaytish"
+  },
+  "reports_page": {
+    "page_label": "Hujjatlar va Hisobotlar",
+    "page_title_1": "Jamiyat",
+    "page_title_2": " Hisobotlari",
+    "back": "Ortga qaytish",
+    "download": "Yuklab olish",
+    "empty": "Hozircha hisobotlar mavjud emas"
+  },
+  "reports": {
+    "label": "Kompaniya hisobotlari",
+    "title_1": "Jamiyat",
+    "title_2": " Hisobotlari",
+    "all": "Barchasi"
   },
   "contact": {
     "title": "Aloqa",

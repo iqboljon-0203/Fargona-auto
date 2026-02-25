@@ -14,7 +14,8 @@ import {
   Menu,
   X,
   ChevronRight,
-  Search
+  Search,
+  FileText
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -22,6 +23,7 @@ const menuItems = [
   { icon: LayoutDashboard, label: 'Dashboard', href: '/admin/dashboard' },
   { icon: Newspaper, label: 'Yangiliklar', href: '/admin/dashboard/news' },
   { icon: Users, label: 'Biz haqimizda', href: '/admin/dashboard/about' },
+  { icon: FileText, label: 'Jamiyat hisobotlari', href: '/admin/dashboard/reports' },
   { icon: Bell, label: 'Arizalar', href: '/admin/dashboard/requests' },
   { icon: Settings, label: 'Sozlamalar', href: '/admin/dashboard/settings' },
 ]
