@@ -1,16 +1,19 @@
 
+
+export const dynamic = 'force-dynamic'
+
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import dynamic from 'next/dynamic'
+import nextDynamic from 'next/dynamic'
 import { supabase } from '@/lib/supabase'
 
-const CarShowcase = dynamic(() => import('@/components/CarShowcase'))
-const AboutSection = dynamic(() => import('@/components/AboutSection'))
-const NewsSection = dynamic(() => import('@/components/NewsSection'))
-const ReportsSection = dynamic(() => import('@/components/ReportsSection'))
-const ContactSection = dynamic(() => import('@/components/ContactSection'))
-const LocationSection = dynamic(() => import('@/components/LocationSection'))
-const Footer = dynamic(() => import('@/components/Footer'))
+const CarShowcase = nextDynamic(() => import('@/components/CarShowcase'))
+const AboutSection = nextDynamic(() => import('@/components/AboutSection'))
+const NewsSection = nextDynamic(() => import('@/components/NewsSection'))
+const ReportsSection = nextDynamic(() => import('@/components/ReportsSection'))
+const ContactSection = nextDynamic(() => import('@/components/ContactSection'))
+const LocationSection = nextDynamic(() => import('@/components/LocationSection'))
+const Footer = nextDynamic(() => import('@/components/Footer'))
 
 export default async function Home() {
   const [aboutDataRes, newsDataRes, reportsDataRes] = await Promise.all([

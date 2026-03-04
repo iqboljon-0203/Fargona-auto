@@ -1,0 +1,6 @@
+﻿CREATE POLICY \
+Public
+Access\ ON storage.objects FOR SELECT USING (bucket_id = 'reports'); CREATE POLICY \Auth
+Insert\ ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'reports' AND auth.role() = 'authenticated'); CREATE POLICY \Auth
+Update\ ON storage.objects FOR UPDATE WITH CHECK (bucket_id = 'reports' AND auth.role() = 'authenticated'); CREATE POLICY \Auth
+Delete\ ON storage.objects FOR DELETE USING (bucket_id = 'reports' AND auth.role() = 'authenticated');
